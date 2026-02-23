@@ -25,6 +25,11 @@ def index():
     return send_from_directory('.', 'index.html')
 
 
+@app.route('/admin')
+def admin():
+    return send_from_directory('.', 'admin.html')
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
