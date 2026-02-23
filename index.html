@@ -260,19 +260,37 @@
     document.getElementById(rule.id).addEventListener('blur', () => validateField(rule));
   });
 
-  document.getElementById('serviceForm').addEventListener('submit', function(e) {
+  document.getElementById('serviceForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const allValid = rules.map(validateField).every(Boolean);
     if (!allValid) return;
 
-    // In a real app you'd POST the data to a server here.
-    // For now, log it and show a success message.
     const data = Object.fromEntries(rules.map(r => [r.id, document.getElementById(r.id).value.trim()]));
-    console.log('Form submission:', data);
 
-    this.style.display = 'none';
-    document.getElementById('successBanner').classList.add('visible');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const btn = this.querySelector('.btn-submit');
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || 'Server error');
+      }
+
+      this.style.display = 'none';
+      document.getElementById('successBanner').classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      btn.textContent = 'Submit Request';
+      btn.disabled = false;
+      alert('Submission failed: ' + err.message);
+    }
   });
 </script>
 
