@@ -128,6 +128,34 @@
     .td-notes   { max-width: 240px; color: #4a5568; }
     .td-date    { white-space: nowrap; color: #718096; font-size: 0.82rem; }
 
+    .bulk-bar {
+      display: none;
+      align-items: center;
+      gap: 0.75rem;
+      background: #ebf8ff;
+      border: 1.5px solid #bee3f8;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #2b6cb0;
+      font-weight: 500;
+    }
+    .bulk-bar.visible { display: flex; }
+
+    .btn-danger { background: #e53e3e; color: #fff; }
+    .btn-danger:hover { background: #c53030; }
+
+    th.th-check, td.td-check {
+      width: 40px;
+      padding-left: 1rem;
+      cursor: default;
+    }
+
+    input[type="checkbox"] { width: 16px; height: 16px; cursor: pointer; accent-color: #3182ce; }
+
+    tr.selected td { background: #ebf8ff; }
+
     .btn-delete {
       background: none;
       border: 1.5px solid #feb2b2;
@@ -192,11 +220,18 @@
     </div>
   </div>
 
+  <div class="bulk-bar" id="bulkBar">
+    <span id="bulkCount">0</span> record(s) selected
+    <button class="btn btn-danger" onclick="deleteSelected()">Delete Selected</button>
+    <button class="btn btn-secondary" onclick="clearSelection()">Clear</button>
+  </div>
+
   <div class="card">
     <div class="table-wrap">
       <table id="table">
         <thead>
           <tr>
+            <th class="th-check"><input type="checkbox" id="selectAll" title="Select all" /></th>
             <th data-col="submitted_at" class="sorted">Date <span class="sort-icon">▼</span></th>
             <th data-col="name">Name <span class="sort-icon">↕</span></th>
             <th data-col="email">Email <span class="sort-icon">↕</span></th>
@@ -207,7 +242,7 @@
           </tr>
         </thead>
         <tbody id="tbody">
-          <tr><td colspan="6" class="loading">Loading…</td></tr>
+          <tr><td colspan="8" class="loading">Loading…</td></tr>
         </tbody>
       </table>
     </div>
@@ -219,6 +254,7 @@
   let allData = [];
   let sortCol = 'submitted_at';
   let sortDir = -1; // -1 = desc, 1 = asc
+  let selected = new Set();
 
   async function loadSubmissions() {
     try {
@@ -265,12 +301,13 @@
 
     const tbody = document.getElementById('tbody');
     if (data.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="6" class="empty-state"><p>${query ? 'No results match your search.' : 'No submissions yet.'}</p></td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="8" class="empty-state"><p>${query ? 'No results match your search.' : 'No submissions yet.'}</p></td></tr>`;
       return;
     }
 
     tbody.innerHTML = data.map(r => `
-      <tr>
+      <tr class="${selected.has(r.id) ? 'selected' : ''}">
+        <td class="td-check"><input type="checkbox" data-id="${r.id}" ${selected.has(r.id) ? 'checked' : ''} onchange="toggleSelect('${r.id}', this)" /></td>
         <td class="td-date">${formatDate(r.submitted_at)}</td>
         <td class="td-name">${escapeHtml(r.name)}</td>
         <td class="td-email"><a href="mailto:${escapeHtml(r.email)}">${escapeHtml(r.email)}</a></td>
@@ -280,6 +317,8 @@
         <td><button class="btn-delete" onclick="deleteSubmission('${r.id}', '${escapeHtml(r.name)}')">Delete</button></td>
       </tr>
     `).join('');
+
+    updateBulkBar();
   }
 
   // Sorting
@@ -301,6 +340,54 @@
 
   // Live search
   document.getElementById('searchInput').addEventListener('input', render);
+
+  // Select all
+  document.getElementById('selectAll').addEventListener('change', function () {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const visible = allData.filter(r =>
+      [r.name, r.email, r.phone, r.notes, r.address.street, r.address.city, r.address.state, r.address.zip]
+        .join(' ').toLowerCase().includes(query)
+    );
+    if (this.checked) visible.forEach(r => selected.add(r.id));
+    else visible.forEach(r => selected.delete(r.id));
+    render();
+  });
+
+  function toggleSelect(id, checkbox) {
+    checkbox.checked ? selected.add(id) : selected.delete(id);
+    checkbox.closest('tr').classList.toggle('selected', checkbox.checked);
+    updateBulkBar();
+  }
+
+  function updateBulkBar() {
+    const bar = document.getElementById('bulkBar');
+    document.getElementById('bulkCount').textContent = selected.size;
+    bar.classList.toggle('visible', selected.size > 0);
+    document.getElementById('selectAll').checked =
+      selected.size > 0 && allData.every(r => selected.has(r.id));
+  }
+
+  function clearSelection() {
+    selected.clear();
+    render();
+  }
+
+  async function deleteSelected() {
+    if (!confirm(`Permanently delete ${selected.size} selected record(s)?`)) return;
+    try {
+      const res = await fetch('/submissions/bulk', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ids: [...selected] }),
+      });
+      if (!res.ok) throw new Error('Bulk delete failed');
+      allData = allData.filter(r => !selected.has(r.id));
+      selected.clear();
+      render();
+    } catch (e) {
+      alert('Failed to delete selected submissions.');
+    }
+  }
 
   async function deleteSubmission(id, name) {
     if (!confirm(`Delete submission from "${name}"?`)) return;

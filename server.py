@@ -77,5 +77,15 @@ def delete_submission(submission_id):
     return jsonify({'message': 'Submission deleted.'})
 
 
+@app.route('/submissions/bulk', methods=['DELETE'])
+def delete_bulk():
+    ids = set(request.get_json().get('ids', []))
+    submissions = load_submissions()
+    updated = [s for s in submissions if s['id'] not in ids]
+    deleted = len(submissions) - len(updated)
+    save_submissions(updated)
+    return jsonify({'message': f'Deleted {deleted} submission(s).'})
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8080)
