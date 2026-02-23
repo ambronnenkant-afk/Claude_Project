@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Request Form</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f4f8;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 620px;
+      padding: 2.5rem 2.5rem;
+    }
+
+    .card-header {
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #e8edf2;
+      padding-bottom: 1.25rem;
+    }
+
+    .card-header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1a202c;
+    }
+
+    .card-header p {
+      color: #718096;
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4a5568;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    label .required { color: #e53e3e; margin-left: 2px; }
+
+    input, textarea {
+      border: 1.5px solid #cbd5e0;
+      border-radius: 7px;
+      padding: 0.6rem 0.85rem;
+      font-size: 0.97rem;
+      color: #2d3748;
+      background: #fff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+      font-family: inherit;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #4299e1;
+      box-shadow: 0 0 0 3px rgba(66,153,225,0.15);
+    }
+
+    input.error, textarea.error {
+      border-color: #e53e3e;
+      box-shadow: 0 0 0 3px rgba(229,62,62,0.12);
+    }
+
+    .error-msg {
+      font-size: 0.78rem;
+      color: #e53e3e;
+      margin-top: 0.3rem;
+      display: none;
+    }
+
+    .error-msg.visible { display: block; }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .address-section {
+      background: #f7fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 9px;
+      padding: 1.25rem 1.25rem 0.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .address-section legend {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4a5568;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.8rem;
+      background: #3182ce;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-submit:hover { background: #2b6cb0; }
+    .btn-submit:active { transform: scale(0.99); }
+
+    .success-banner {
+      display: none;
+      background: #c6f6d5;
+      border: 1.5px solid #68d391;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      color: #276749;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      font-size: 0.97rem;
+    }
+
+    .success-banner.visible { display: block; }
+
+    @media (max-width: 500px) {
+      .card { padding: 1.75rem 1.25rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="card-header">
+    <h1>Service Request</h1>
+    <p>Fill out the form below and we'll be in touch shortly.</p>
+  </div>
+
+  <div class="success-banner" id="successBanner">
+    &#10003; Your service request has been submitted. We'll contact you soon!
+  </div>
+
+  <form id="serviceForm" novalidate>
+
+    <!-- Name & Email -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Full Name <span class="required">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name" />
+        <span class="error-msg" id="nameErr">Please enter your full name.</span>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" />
+        <span class="error-msg" id="emailErr">Please enter a valid email address.</span>
+      </div>
+    </div>
+
+    <!-- Phone -->
+    <div class="form-group">
+      <label for="phone">Telephone Number <span class="required">*</span></label>
+      <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel" />
+      <span class="error-msg" id="phoneErr">Please enter a valid phone number.</span>
+    </div>
+
+    <!-- Address -->
+    <div class="address-section">
+      <legend>Home Address</legend>
+      <div class="form-group full">
+        <label for="street">Street Address <span class="required">*</span></label>
+        <input type="text" id="street" name="street" placeholder="123 Main St" autocomplete="street-address" />
+        <span class="error-msg" id="streetErr">Please enter your street address.</span>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="city">City <span class="required">*</span></label>
+          <input type="text" id="city" name="city" placeholder="Springfield" autocomplete="address-level2" />
+          <span class="error-msg" id="cityErr">Please enter your city.</span>
+        </div>
+        <div class="form-group">
+          <label for="state">State <span class="required">*</span></label>
+          <input type="text" id="state" name="state" placeholder="IL" maxlength="2" autocomplete="address-level1" />
+          <span class="error-msg" id="stateErr">Please enter your state.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="zip">ZIP Code <span class="required">*</span></label>
+        <input type="text" id="zip" name="zip" placeholder="62701" maxlength="10" autocomplete="postal-code" />
+        <span class="error-msg" id="zipErr">Please enter a valid ZIP code.</span>
+      </div>
+    </div>
+
+    <!-- Notes -->
+    <div class="form-group">
+      <label for="notes">Service Request / Notes <span class="required">*</span></label>
+      <textarea id="notes" name="notes" placeholder="Please describe the service you need..."></textarea>
+      <span class="error-msg" id="notesErr">Please describe your service request.</span>
+    </div>
+
+    <button type="submit" class="btn-submit">Submit Request</button>
+  </form>
+</div>
+
+<script>
+  const rules = [
+    { id: 'name',   errId: 'nameErr',   validate: v => v.trim().length >= 2 },
+    { id: 'email',  errId: 'emailErr',  validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+    { id: 'phone',  errId: 'phoneErr',  validate: v => v.replace(/\D/g, '').length >= 7 },
+    { id: 'street', errId: 'streetErr', validate: v => v.trim().length >= 3 },
+    { id: 'city',   errId: 'cityErr',   validate: v => v.trim().length >= 2 },
+    { id: 'state',  errId: 'stateErr',  validate: v => v.trim().length >= 1 },
+    { id: 'zip',    errId: 'zipErr',    validate: v => /^\d{5}(-\d{4})?$/.test(v.trim()) },
+    { id: 'notes',  errId: 'notesErr',  validate: v => v.trim().length >= 10 },
+  ];
+
+  function validateField(rule) {
+    const input = document.getElementById(rule.id);
+    const err   = document.getElementById(rule.errId);
+    const valid = rule.validate(input.value);
+    input.classList.toggle('error', !valid);
+    err.classList.toggle('visible', !valid);
+    return valid;
+  }
+
+  // Live validation on blur
+  rules.forEach(rule => {
+    document.getElementById(rule.id).addEventListener('blur', () => validateField(rule));
+  });
+
+  document.getElementById('serviceForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const allValid = rules.map(validateField).every(Boolean);
+    if (!allValid) return;
+
+    // In a real app you'd POST the data to a server here.
+    // For now, log it and show a success message.
+    const data = Object.fromEntries(rules.map(r => [r.id, document.getElementById(r.id).value.trim()]));
+    console.log('Form submission:', data);
+
+    this.style.display = 'none';
+    document.getElementById('successBanner').classList.add('visible');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
