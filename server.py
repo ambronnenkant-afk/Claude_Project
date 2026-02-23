@@ -67,5 +67,15 @@ def get_submissions():
     return jsonify(load_submissions())
 
 
+@app.route('/submissions/<submission_id>', methods=['DELETE'])
+def delete_submission(submission_id):
+    submissions = load_submissions()
+    updated = [s for s in submissions if s['id'] != submission_id]
+    if len(updated) == len(submissions):
+        return jsonify({'error': 'Submission not found.'}), 404
+    save_submissions(updated)
+    return jsonify({'message': 'Submission deleted.'})
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8080)

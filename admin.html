@@ -128,6 +128,20 @@
     .td-notes   { max-width: 240px; color: #4a5568; }
     .td-date    { white-space: nowrap; color: #718096; font-size: 0.82rem; }
 
+    .btn-delete {
+      background: none;
+      border: 1.5px solid #feb2b2;
+      color: #e53e3e;
+      border-radius: 6px;
+      padding: 0.3rem 0.65rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-delete:hover { background: #e53e3e; color: #fff; border-color: #e53e3e; }
+
     .notes-text {
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -189,6 +203,7 @@
             <th data-col="phone">Phone <span class="sort-icon">↕</span></th>
             <th>Address</th>
             <th>Notes</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id="tbody">
@@ -262,6 +277,7 @@
         <td class="td-phone">${escapeHtml(r.phone)}</td>
         <td class="td-address">${formatAddress(r.address)}</td>
         <td class="td-notes"><div class="notes-text" onclick="this.classList.toggle('expanded')" title="Click to expand">${escapeHtml(r.notes)}</div></td>
+        <td><button class="btn-delete" onclick="deleteSubmission('${r.id}', '${escapeHtml(r.name)}')">Delete</button></td>
       </tr>
     `).join('');
   }
@@ -285,6 +301,18 @@
 
   // Live search
   document.getElementById('searchInput').addEventListener('input', render);
+
+  async function deleteSubmission(id, name) {
+    if (!confirm(`Delete submission from "${name}"?`)) return;
+    try {
+      const res = await fetch(`/submissions/${id}`, { method: 'DELETE' });
+      if (!res.ok) throw new Error('Delete failed');
+      allData = allData.filter(r => r.id !== id);
+      render();
+    } catch (e) {
+      alert('Failed to delete submission.');
+    }
+  }
 
   loadSubmissions();
 </script>
