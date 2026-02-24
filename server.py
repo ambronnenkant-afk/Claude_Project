@@ -35,6 +35,11 @@ def sanitization():
     return send_from_directory('.', 'sanitization.html')
 
 
+@app.route('/brochure')
+def brochure():
+    return send_from_directory('.', 'brochure.html')
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()

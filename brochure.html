@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoldCure Elder Care Brochure</title>
+  <!-- Montserrat as the closest Google Fonts match to Proxima Nova -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @page { size: Letter portrait; margin: 0; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark-blue:  #203B72;
+      --green:      #00A651;
+      --green-light:#e6f7ee;
+      --blue-light: #eaeff8;
+      --blue-mid:   #2d4f8e;
+      --text:       #1a2e50;
+      --muted:      #52647a;
+      --line:       #d4dce8;
+      --white:      #ffffff;
+    }
+
+    /* Proxima Nova → Montserrat fallback */
+    body {
+      font-family: 'proxima-nova', 'Proxima Nova', 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      background: #8a95a3;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--dark-blue);
+      color: var(--white);
+      padding: 0.38in 0.5in 0in;
+      position: relative;
+    }
+
+    /* Green accent bar at very top */
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: var(--green);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      padding-top: 0.1in;
+    }
+
+    /* Logo area */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.2in;
+    }
+    .brand-logo {
+      height: 52px;
+      width: auto;
+      max-width: 280px;
+      display: block;
+    }
+    /* Fallback text if logo.png not found */
+    .brand-logo-fallback {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+    .brand-logo-fallback span { color: var(--green); }
+
+    .header-badge {
+      background: var(--green);
+      color: var(--white);
+      border-radius: 4px;
+      padding: 0.18rem 0.75rem;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      white-space: nowrap;
+      margin-top: 0.12in;
+    }
+
+    .header h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 0.1in;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+    .header h1 span { color: var(--green); }
+
+    .header-tagline {
+      font-size: 0.8rem;
+      color: #a8bcd6;
+      line-height: 1.5;
+      padding-bottom: 0.28in;
+    }
+
+    /* ── STATS ROW ── */
+    .stats {
+      display: flex;
+      background: var(--dark-blue);
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .stat {
+      flex: 1;
+      text-align: center;
+      padding: 0.16in 0.08in;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      position: relative;
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--green);
+      letter-spacing: -0.02em;
+    }
+    .stat-label {
+      font-size: 0.57rem;
+      color: #a8bcd6;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    /* ── IMAGE STRIP ── */
+    .image-strip {
+      width: 100%;
+      height: 1.05in;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .image-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+    }
+    .image-strip-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(32,59,114,0.72) 0%, rgba(32,59,114,0.25) 55%, rgba(0,0,0,0.1) 100%);
+      display: flex;
+      align-items: center;
+      padding: 0 0.5in;
+    }
+    .image-strip-text {
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    }
+    .image-strip-text span {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      margin-top: 2px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── FOG2 INSET IMAGE ── */
+    .fog2-wrap {
+      width: 100%;
+      height: 1.0in;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 0.15in;
+      position: relative;
+    }
+    .fog2-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .fog2-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(32,59,114,0.85), transparent);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 600;
+      padding: 0.1in 0.12in 0.08in;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ── BODY ── */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      flex: 1;
+    }
+
+    .col { padding: 0.2in 0.35in; }
+    .col-left { border-right: 2px solid var(--green); }
+
+    /* ── INTRO ── */
+    .intro {
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 0.2in;
+      padding-bottom: 0.16in;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* ── SECTION LABEL ── */
+    .sec-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--green);
+      margin-bottom: 0.1in;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .sec-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--green);
+      opacity: 0.25;
+    }
+
+    /* ── DIFFERENTIATORS ── */
+    .diff-list { list-style: none; display: flex; flex-direction: column; gap: 0.13in; }
+    .diff-item { display: flex; gap: 0.11in; align-items: flex-start; }
+    .diff-icon {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      background: var(--green-light);
+      border-radius: 6px;
+      border: 1px solid rgba(0,166,81,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem;
+    }
+    .diff-item h4 {
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: var(--dark-blue);
+      margin-bottom: 1px;
+      letter-spacing: -0.01em;
+    }
+    .diff-item p { font-size: 0.65rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── IDEAL FOR ── */
+    .ideal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.07in;
+      margin-bottom: 0.2in;
+    }
+    .ideal-item {
+      display: flex;
+      align-items: center;
+      gap: 0.07in;
+      background: var(--blue-light);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--green);
+      border-radius: 0 6px 6px 0;
+      padding: 0.07in 0.1in;
+      font-size: 0.66rem;
+      font-weight: 600;
+      color: var(--dark-blue);
+    }
+
+    /* ── BENEFITS ── */
+    .benefit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.055in;
+      margin-bottom: 0.2in;
+    }
+    .benefit-list li {
+      font-size: 0.68rem;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.08in;
+      line-height: 1.45;
+    }
+    .check {
+      flex-shrink: 0;
+      width: 14px; height: 14px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 0.55rem;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    /* ── SERVICE PLANS ── */
+    .plans-box {
+      background: var(--blue-light);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--dark-blue);
+      border-radius: 0 0 8px 8px;
+      padding: 0.13in 0.15in;
+      margin-bottom: 0.15in;
+    }
+    .plans-box p { font-size: 0.66rem; color: var(--muted); line-height: 1.55; }
+    .plan-tags { display: flex; gap: 0.05in; margin-top: 0.09in; flex-wrap: wrap; }
+    .plan-tag {
+      background: var(--dark-blue);
+      color: #fff;
+      border-radius: 3px;
+      padding: 0.025in 0.1in;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── CTA BOX ── */
+    .cta-box {
+      background: var(--green-light);
+      border: 1px solid rgba(0,166,81,0.25);
+      border-left: 4px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 0.12in 0.14in;
+    }
+    .cta-box p {
+      font-size: 0.67rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .cta-box strong { color: var(--dark-blue); }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--dark-blue);
+      color: #fff;
+      padding: 0.2in 0.5in;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      border-top: 4px solid var(--green);
+    }
+    .footer-left h3 {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.04in;
+      letter-spacing: -0.01em;
+    }
+    .footer-left .sub { font-size: 0.62rem; color: #a8bcd6; margin-bottom: 0.1in; }
+    .footer-contacts { display: flex; gap: 0.22in; flex-wrap: wrap; }
+    .footer-contact {
+      display: flex;
+      align-items: center;
+      gap: 0.07in;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .footer-contact .ico {
+      width: 20px; height: 20px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    .qr-wrap { text-align: center; flex-shrink: 0; }
+    .qr-inner {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 6px;
+      display: inline-block;
+    }
+    .qr-wrap p {
+      font-size: 0.55rem;
+      color: #a8bcd6;
+      margin-top: 0.06in;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 600;
+    }
+    #qrcode canvas, #qrcode img { display: block; border-radius: 4px; }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: none; padding: 0; display: block; }
+      .page { box-shadow: none; width: 100%; min-height: 100vh; }
+      .print-btn { display: none !important; }
+    }
+
+    .print-btn {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--dark-blue);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      font-family: inherit;
+      border-left: 4px solid var(--green);
+    }
+    .print-btn:hover { background: var(--blue-mid); }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="brand">
+          <!-- Logo: drop logo.png into the Claude_Project folder to display it -->
+          <img
+            src="logo.jpg"
+            alt="MoldCure"
+            class="brand-logo"
+            onerror="this.style.display='none'; document.getElementById('brand-fallback').style.display='block';"
+          />
+          <div class="brand-logo-fallback" id="brand-fallback" style="display:none;">
+            Mold<span>Cure</span>
+          </div>
+        </div>
+        <h1>Dry‑Fog Sanitization for<br /><span>Elder Care Facilities</span></h1>
+        <p class="header-tagline">A Safer, Cleaner Environment for Residents, Families &amp; Staff</p>
+      </div>
+      <div class="header-badge">VaPURE™ Technology</div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat"><div class="stat-num">99.9%</div><div class="stat-label">Pathogen Kill Rate</div></div>
+      <div class="stat"><div class="stat-num">&lt;1 hr</div><div class="stat-label">Per Zone</div></div>
+      <div class="stat"><div class="stat-num">Zero</div><div class="stat-label">Downtime</div></div>
+      <div class="stat"><div class="stat-num">EPA</div><div class="stat-label">Approved</div></div>
+      <div class="stat"><div class="stat-num">GLP</div><div class="stat-label">Lab Validated</div></div>
+    </div>
+  </div>
+
+  <!-- IMAGE STRIP -->
+  <div class="image-strip">
+    <img src="fog1.jpg" alt="MoldCure dry fog sanitization in action" />
+    <div class="image-strip-overlay">
+      <div class="image-strip-text">
+        VaPURE™ Dry Fog fills every room, vent &amp; surface
+        <span>Whole-building protection — reaching where traditional cleaning can't</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- LEFT COLUMN -->
+    <div class="col col-left">
+      <p class="intro">
+        Senior‑living environments require exceptional standards of cleanliness, odor control, and infection prevention. MoldCure's dry‑fog sanitization system delivers whole‑building protection that traditional cleaning cannot reach — all without disrupting residents or daily operations.
+        <br /><br />
+        Our ultra‑fine dry fog treats air and surfaces simultaneously, reaching deep into rooms, vents, fabrics, and high‑touch areas to reduce airborne contaminants and measurably improve indoor air quality.
+      </p>
+
+      <div class="sec-label">What Makes MoldCure Different</div>
+      <ul class="diff-list">
+        <li class="diff-item">
+          <div class="diff-icon">🏢</div>
+          <div>
+            <h4>Whole‑Building Coverage</h4>
+            <p>Our dry fog fills each room like a vapor, reaching high ceilings, corners, vents, and soft surfaces that manual cleaning can't access.</p>
+          </div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-icon">⚡</div>
+          <div>
+            <h4>Fast &amp; Non‑Disruptive</h4>
+            <p>Most treatments take under an hour per zone. No moving furniture. No residue. No downtime for residents or staff.</p>
+          </div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-icon">🔬</div>
+          <div>
+            <h4>Scientifically Validated Technology</h4>
+            <p>Hospital‑grade disinfecting solution backed by independent GLP laboratory testing — complete kill of bacteria, mold spores, and fungi on porous and non‑porous surfaces.</p>
+          </div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-icon">💚</div>
+          <div>
+            <h4>Safe for Residents &amp; Staff</h4>
+            <p>Once the fog dissipates and the space is aerated, rooms are immediately safe to re‑enter. No harsh odors or cleanup required.</p>
+          </div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-icon">🌬️</div>
+          <div>
+            <h4>Odor Elimination</h4>
+            <p>Removes persistent odors from kitchens, laundry areas, resident rooms, and common spaces — improving first impressions for families and visitors.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col col-right">
+
+      <div class="sec-label">Ideal For</div>
+      <div class="ideal-grid">
+        <div class="ideal-item">Assisted Living</div>
+        <div class="ideal-item">Memory Care</div>
+        <div class="ideal-item">Skilled Nursing</div>
+        <div class="ideal-item">Independent Living</div>
+        <div class="ideal-item" style="grid-column:1/-1;">Rehabilitation Centers</div>
+      </div>
+
+      <div class="sec-label">Benefits for Your Community</div>
+      <ul class="benefit-list">
+        <li><span class="check">✓</span>Reduces airborne pathogens and mold spores</li>
+        <li><span class="check">✓</span>Enhances resident comfort and satisfaction</li>
+        <li><span class="check">✓</span>Supports infection‑control protocols</li>
+        <li><span class="check">✓</span>Lightens housekeeping workload</li>
+        <li><span class="check">✓</span>Improves indoor air quality throughout the facility</li>
+        <li><span class="check">✓</span>Eliminates odors at the source</li>
+        <li><span class="check">✓</span>Provides peace of mind for families and staff</li>
+      </ul>
+
+      <div class="sec-label">Flexible Service Plans</div>
+      <div class="plans-box">
+        <p>We offer sanitization memberships tailored to your building size and needs. Our team will assess your facility and recommend the most effective schedule.</p>
+        <div class="plan-tags">
+          <span class="plan-tag">Monthly</span>
+          <span class="plan-tag">Bi‑Weekly</span>
+          <span class="plan-tag">Quarterly</span>
+          <span class="plan-tag">Custom</span>
+        </div>
+      </div>
+
+      <div class="fog2-wrap">
+        <img src="fog2.jpg" alt="MoldCure technician applying dry fog treatment" />
+        <div class="fog2-caption">Our certified technicians treat your facility with care</div>
+      </div>
+
+      <div class="sec-label">Experience the MoldCure Difference</div>
+      <div class="cta-box">
+        <p>We offer <strong>complimentary on‑site walkthroughs</strong> for senior‑living communities. Let us show you how our dry‑fog system can elevate your environment and support your care mission.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <h3>Schedule a Free Walkthrough Today</h3>
+      <p class="sub">Contact us — we'll assess your facility at no cost or obligation.</p>
+      <div class="footer-contacts">
+        <a class="footer-contact" href="tel:2023707752">
+          <span class="ico">📞</span>(202) 370‑7752
+        </a>
+        <a class="footer-contact" href="mailto:service@moldcure.com">
+          <span class="ico">✉️</span>service@moldcure.com
+        </a>
+        <a class="footer-contact" href="https://moldcure.com">
+          <span class="ico">🌐</span>moldcure.com
+        </a>
+      </div>
+    </div>
+    <div class="qr-wrap">
+      <div class="qr-inner"><div id="qrcode"></div></div>
+      <p>Scan to Visit</p>
+    </div>
+  </div>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById('qrcode'), {
+    text: 'https://moldcure.com',
+    width: 82,
+    height: 82,
+    colorDark: '#203B72',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M,
+  });
+</script>
+
+</body>
+</html>
