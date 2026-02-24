@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whole Building Sanitization — MoldCure</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0f2557;
+      --blue:   #1e4fc2;
+      --bright: #3b82f6;
+      --light:  #dbeafe;
+      --bg:     #f8fafc;
+      --text:   #1e293b;
+      --muted:  #64748b;
+      --white:  #ffffff;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 0.55rem 1rem;
+      font-size: 0.88rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .topbar a { color: #93c5fd; text-decoration: none; }
+    .topbar a:hover { color: var(--white); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      color: var(--white);
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(59,130,246,0.25) 0%, transparent 70%);
+    }
+    .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 999px;
+      padding: 0.3rem 1rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 span { color: #93c5fd; }
+    .hero p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+    }
+    .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-hero {
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, opacity 0.15s;
+      display: inline-block;
+    }
+    .btn-hero:hover { transform: translateY(-2px); opacity: 0.92; }
+    .btn-hero.primary { background: var(--white); color: var(--navy); }
+    .btn-hero.secondary { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+
+    /* ── STATS BAR ── */
+    .stats {
+      background: var(--white);
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .stat {
+      flex: 1;
+      min-width: 160px;
+      text-align: center;
+      padding: 1.75rem 1rem;
+      border-right: 1px solid #e2e8f0;
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: var(--blue); }
+    .stat-label { font-size: 0.83rem; color: var(--muted); margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* ── SECTIONS ── */
+    section { padding: 4.5rem 1.5rem; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      background: var(--light);
+      color: var(--blue);
+      border-radius: 999px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .section-sub { color: var(--muted); font-size: 1rem; margin-bottom: 3rem; max-width: 560px; }
+
+    /* ── BENEFITS ── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .benefit-card {
+      background: var(--white);
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .benefit-card:hover { box-shadow: 0 8px 32px rgba(30,79,194,0.1); transform: translateY(-3px); }
+    .benefit-icon {
+      width: 52px; height: 52px;
+      background: var(--light);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .benefit-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+    .benefit-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── HOW IT WORKS ── */
+    .how-section { background: var(--white); }
+    .steps { display: flex; flex-direction: column; gap: 2rem; counter-reset: step; }
+    .step {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+    .step-content h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+    .step-content p  { font-size: 0.92rem; color: var(--muted); }
+
+    /* ── QR + CONTACT ── */
+    .contact-section { background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%); color: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .contact-grid h2 { color: var(--white); }
+    .contact-grid .section-sub { color: #93c5fd; margin-bottom: 2rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 0.85rem 1.25rem;
+      transition: background 0.2s;
+    }
+    .contact-link:hover { background: rgba(255,255,255,0.2); }
+    .contact-link .icon { font-size: 1.3rem; }
+
+    .qr-box {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      min-width: 180px;
+    }
+    .qr-box p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+    #qrcode canvas, #qrcode img { border-radius: 6px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0a1a3d;
+      color: #64748b;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.83rem;
+    }
+    footer a { color: #93c5fd; text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .qr-box { margin: 0 auto; }
+      .stat { border-right: none; border-bottom: 1px solid #e2e8f0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <a href="tel:2023707752">📞 (202) 370-7752</a>
+  <a href="mailto:service@moldcure.com">✉️ service@moldcure.com</a>
+  <a href="https://moldcure.com" target="_blank">🌐 moldcure.com</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">VaPURE™ Dry Fog Technology</div>
+    <h1>Whole Building<br /><span>Sanitization Services</span></h1>
+    <p>Science-backed mold elimination that reaches every surface, every corner — in as little as one day.</p>
+    <div class="hero-ctas">
+      <a href="tel:2023707752" class="btn-hero primary">📞 Call (202) 370-7752</a>
+      <a href="mailto:service@moldcure.com" class="btn-hero secondary">Request a Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">99.9%</div>
+    <div class="stat-label">Mold Destruction Rate</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">1 Day</div>
+    <div class="stat-label">Treatment Timeframe</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">EPA</div>
+    <div class="stat-label">Approved Ingredients</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">5 ★</div>
+    <div class="stat-label">Hundreds of Reviews</div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section>
+  <div class="section-inner">
+    <div class="section-tag">Why MoldCure</div>
+    <h2>Complete Protection for Every Space</h2>
+    <p class="section-sub">Our patented VaPURE™ system fills the entire volume of your building, destroying mold on surfaces and in the air — not just what's visible.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🌫️</div>
+        <h3>Dry Fog Technology</h3>
+        <p>Penetrates walls, ceilings, HVAC systems, and hidden cavities where traditional cleaning can't reach.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🛡️</div>
+        <h3>Prevents Regrowth</h3>
+        <p>An antimicrobial protectant is applied after treatment, creating a long-lasting barrier against future mold growth.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🏠</div>
+        <h3>Non-Invasive Process</h3>
+        <p>No demolition, no tearing out walls. Our fog-based treatment leaves your property intact and clean.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🧪</div>
+        <h3>Science-Based Results</h3>
+        <p>EPA-approved active ingredients with lab-verified 99.9% mold destruction rates on every treatment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-inner">
+    <div class="section-tag">The Process</div>
+    <h2>How It Works</h2>
+    <p class="section-sub">Three simple steps to a fully sanitized building.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Inspection & Testing</h3>
+          <p>We assess your property, identify mold sources, and test air quality to build a targeted treatment plan.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>VaPURE™ Dry Fog Treatment</h3>
+          <p>Our proprietary fog is dispersed throughout the entire building — filling every room, duct, and hidden space — destroying mold at its source.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Antimicrobial Protectant Application</h3>
+          <p>A protective coating is applied to treated surfaces to prevent mold from returning, giving you lasting peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT + QR -->
+<section class="contact-section">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="section-tag" style="background:rgba(255,255,255,0.15);color:#fff;">Get In Touch</div>
+        <h2>Ready to Sanitize Your Building?</h2>
+        <p class="section-sub">Contact us today for a free consultation. We serve residential and commercial properties.</p>
+        <div class="contact-links">
+          <a href="tel:2023707752" class="contact-link">
+            <span class="icon">📞</span> (202) 370-7752
+          </a>
+          <a href="mailto:service@moldcure.com" class="contact-link">
+            <span class="icon">✉️</span> service@moldcure.com
+          </a>
+          <a href="https://moldcure.com" target="_blank" class="contact-link">
+            <span class="icon">🌐</span> moldcure.com
+          </a>
+        </div>
+      </div>
+      <div class="qr-box">
+        <div id="qrcode"></div>
+        <p>Scan to Save Contact</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2026 MoldCure. All rights reserved. &nbsp;|&nbsp;
+  <a href="https://moldcure.com">moldcure.com</a>
+</footer>
+
+<!-- QR CODE -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById('qrcode'), {
+    text: 'MECARD:N:MoldCure;TEL:2023707752;EMAIL:service@moldcure.com;URL:https://moldcure.com;;',
+    width: 148,
+    height: 148,
+    colorDark: '#0f2557',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M,
+  });
+</script>
+
+</body>
+</html>

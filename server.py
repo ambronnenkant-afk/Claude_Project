@@ -30,6 +30,11 @@ def admin():
     return send_from_directory('.', 'admin.html')
 
 
+@app.route('/sanitization')
+def sanitization():
+    return send_from_directory('.', 'sanitization.html')
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
