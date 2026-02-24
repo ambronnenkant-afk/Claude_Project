@@ -40,6 +40,11 @@ def brochure():
     return send_from_directory('.', 'brochure.html')
 
 
+@app.route('/brochure-schools')
+def brochure_schools():
+    return send_from_directory('.', 'brochure-schools.html')
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
