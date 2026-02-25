@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoldCure Blog — Mold Remediation Tips & Resources</title>
+  <meta name="description" content="Expert mold remediation advice, indoor air quality tips, and home health resources for Washington DC homeowners and businesses from MoldCure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --dark-blue: #203B72; --green: #00A651; --green-light: #e6f7ee; --blue-light: #eaeff8; --text: #1a2e50; --muted: #52647a; --line: #d4dce8; --white: #ffffff; --bg: #f8fafc; }
+    body { font-family: 'proxima-nova','Proxima Nova','Montserrat','Helvetica Neue',Arial,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    .topbar { background: var(--dark-blue); padding: 0.6rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .topbar-logo { height: 44px; width: auto; background: var(--white); border-radius: 6px; padding: 4px 10px; display: block; }
+    .topbar-logo-fallback { font-size: 1.2rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
+    .topbar-logo-fallback span { color: var(--green); }
+    .topbar-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+    .topbar-links a { color: #a8bcd6; text-decoration: none; font-size: 0.82rem; font-weight: 500; }
+    .topbar-links a:hover { color: var(--white); }
+    .topbar-cta { background: var(--green) !important; color: var(--white) !important; border-radius: 6px; padding: 0.4rem 1rem; font-weight: 700 !important; }
+
+    .hero { background: linear-gradient(135deg, var(--dark-blue) 0%, #2d4f8e 100%); padding: 3.5rem 2rem 3rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 50%, rgba(0,166,81,0.12) 0%, transparent 70%); }
+    .hero-inner { max-width: 680px; margin: 0 auto; position: relative; }
+    .hero-badge { display: inline-block; background: rgba(0,166,81,0.2); border: 1px solid rgba(0,166,81,0.4); color: #6ee7a0; border-radius: 999px; padding: 0.25rem 0.9rem; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: var(--white); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .hero h1 span { color: #6ee7a0; }
+    .hero p { font-size: 1rem; color: #a8bcd6; max-width: 520px; margin: 0 auto; }
+
+    .blog-grid-section { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
+    .section-label { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--green); opacity: 0.25; }
+
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+
+    .blog-card { background: var(--white); border: 1.5px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s, transform 0.2s; text-decoration: none; }
+    .blog-card:hover { box-shadow: 0 8px 32px rgba(32,59,114,0.12); transform: translateY(-3px); }
+    .blog-card-top { background: linear-gradient(135deg, var(--dark-blue) 0%, #2d4f8e 100%); padding: 1.25rem 1.4rem 1rem; position: relative; }
+    .blog-card-top.green { background: linear-gradient(135deg, #0d6e3c 0%, var(--green) 100%); }
+    .blog-card-top.mid { background: linear-gradient(135deg, #1a3a6e 0%, #3a5fa8 100%); }
+    .card-category { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); margin-bottom: 0.4rem; }
+    .card-title { font-size: 0.98rem; font-weight: 800; color: var(--white); line-height: 1.3; letter-spacing: -0.01em; }
+    .blog-card-body { padding: 1.1rem 1.4rem 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
+    .card-excerpt { font-size: 0.83rem; color: var(--muted); line-height: 1.6; flex: 1; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; }
+    .card-meta { font-size: 0.72rem; color: var(--muted); }
+    .card-read { font-size: 0.78rem; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 0.3rem; }
+    .card-read::after { content: '→'; }
+
+    .cta-band { background: var(--dark-blue); padding: 2.5rem 2rem; text-align: center; margin-top: 1rem; }
+    .cta-band h2 { font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; }
+    .cta-band p { font-size: 0.9rem; color: #a8bcd6; margin-bottom: 1.5rem; }
+    .cta-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--green); color: var(--white); padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; }
+    .btn-secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1.5px solid rgba(255,255,255,0.3); padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+    footer { background: #0a1a3d; color: #64748b; text-align: center; padding: 1.5rem; font-size: 0.82rem; }
+    footer a { color: #93c5fd; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="https://moldcure.com">
+    <img src="./logo.jpg" alt="MoldCure" class="topbar-logo" onerror="this.style.display='none';document.getElementById('nav-fallback').style.display='block';" />
+    <span class="topbar-logo-fallback" id="nav-fallback" style="display:none;">Mold<span>Cure</span></span>
+  </a>
+  <div class="topbar-links">
+    <a href="https://moldcure.com">Home</a>
+    <a href="https://moldcure.com/services">Services</a>
+    <a href="tel:2023707752" class="topbar-cta">📞 (202) 370‑7752</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">MoldCure Resource Center</div>
+    <h1>Mold Tips, <span>Health Guides</span><br />& DC Homeowner Resources</h1>
+    <p>Expert advice on mold remediation, indoor air quality, and keeping your home or business healthy — from the MoldCure team in Washington, DC.</p>
+  </div>
+</div>
+
+<div class="blog-grid-section">
+  <div class="section-label">All Articles</div>
+  <div class="blog-grid">
+
+    <a class="blog-card" href="./blog-mold-keeps-coming-back.html">
+      <div class="blog-card-top">
+        <div class="card-category">🏠 Mold Education</div>
+        <div class="card-title">Why Mold Keeps Coming Back — And How to Stop It for Good</div>
+      </div>
+      <div class="blog-card-body">
+        <p class="card-excerpt">Scrubbed it. Bleached it. Hired someone. It came back anyway. Here's why traditional treatments fail — and what actually works.</p>
+        <div class="card-footer">
+          <span class="card-meta">7 min read</span>
+          <span class="card-read">Read article</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="blog-card" href="./blog-mold-air-quality-health.html">
+      <div class="blog-card-top mid">
+        <div class="card-category">🌬️ Health & Air Quality</div>
+        <div class="card-title">How Mold Affects Indoor Air Quality — And Your Health</div>
+      </div>
+      <div class="blog-card-body">
+        <p class="card-excerpt">Mold releases spores and mycotoxins into the air you breathe every day. Learn the health effects, who's most at risk, and how to test your air.</p>
+        <div class="card-footer">
+          <span class="card-meta">5 min read</span>
+          <span class="card-read">Read article</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="blog-card" href="./blog-whole-building-sanitization.html">
+      <div class="blog-card-top green">
+        <div class="card-category">🏢 Sanitization Guide</div>
+        <div class="card-title">Whole-Building Sanitization: What It Is and When You Need It</div>
+      </div>
+      <div class="blog-card-body">
+        <p class="card-excerpt">Spot treatments leave gaps. Learn when whole-building sanitization is necessary and how VaPURE™ dry-fog covers every surface and cubic foot of air.</p>
+        <div class="card-footer">
+          <span class="card-meta">4 min read</span>
+          <span class="card-read">Read article</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="blog-card" href="./blog-mold-dc-row-homes.html">
+      <div class="blog-card-top">
+        <div class="card-category">🏛️ DC Homeowner Guide</div>
+        <div class="card-title">Mold in DC Row Homes: Why Older Housing Is Especially Vulnerable</div>
+      </div>
+      <div class="blog-card-body">
+        <p class="card-excerpt">Capitol Hill, Georgetown, Petworth — DC's iconic row homes are beautiful but mold-prone. Here's why, and what to do about it.</p>
+        <div class="card-footer">
+          <span class="card-meta">6 min read</span>
+          <span class="card-read">Read article</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="blog-card" href="./blog-reduce-humidity-home.html">
+      <div class="blog-card-top mid">
+        <div class="card-category">🌡️ Mold Prevention Tips</div>
+        <div class="card-title">How to Reduce Humidity in Your Home This Summer</div>
+      </div>
+      <div class="blog-card-body">
+        <p class="card-excerpt">DC summers push indoor humidity well above the mold-growth threshold. 8 practical steps to keep your home dry and mold-free all season.</p>
+        <div class="card-footer">
+          <span class="card-meta">4 min read</span>
+          <span class="card-read">Read article</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Think You Have a Mold Problem?</h2>
+  <p>MoldCure offers free on-site assessments for homes and businesses throughout Washington, DC, Maryland, and Northern Virginia.</p>
+  <div class="cta-btns">
+    <a href="tel:2023707752" class="btn-primary">📞 Call (202) 370‑7752</a>
+    <a href="mailto:service@moldcure.com" class="btn-secondary">✉️ service@moldcure.com</a>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 MoldCure. All rights reserved. &nbsp;|&nbsp;
+  <a href="https://moldcure.com">moldcure.com</a> &nbsp;|&nbsp;
+  <a href="tel:2023707752">(202) 370‑7752</a>
+</footer>
+
+</body>
+</html>
