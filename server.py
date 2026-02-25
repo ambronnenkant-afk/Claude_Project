@@ -45,6 +45,46 @@ def brochure_schools():
     return send_from_directory('.', 'brochure-schools.html')
 
 
+@app.route('/brochure-gyms')
+def brochure_gyms():
+    return send_from_directory('.', 'brochure-gyms.html')
+
+
+@app.route('/pricing-vida')
+def pricing_vida():
+    return send_from_directory('.', 'pricing-vida.html')
+
+
+@app.route('/reviews')
+def reviews():
+    return send_from_directory('.', 'reviews.html')
+
+
+@app.route('/blog/why-mold-keeps-coming-back')
+def blog_mold_keeps_coming_back():
+    return send_from_directory('.', 'blog-mold-keeps-coming-back.html')
+
+
+@app.route('/blog/mold-indoor-air-quality-health')
+def blog_mold_air_quality():
+    return send_from_directory('.', 'blog-mold-air-quality-health.html')
+
+
+@app.route('/blog/whole-building-sanitization-guide')
+def blog_whole_building():
+    return send_from_directory('.', 'blog-whole-building-sanitization.html')
+
+
+@app.route('/blog/mold-dc-row-homes')
+def blog_row_homes():
+    return send_from_directory('.', 'blog-mold-dc-row-homes.html')
+
+
+@app.route('/blog/reduce-humidity-home-summer')
+def blog_reduce_humidity():
+    return send_from_directory('.', 'blog-reduce-humidity-home.html')
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()

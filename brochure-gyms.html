@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MoldCure Elder Care Brochure</title>
-  <!-- Montserrat as the closest Google Fonts match to Proxima Nova -->
+  <title>MoldCure Gyms Brochure</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
@@ -51,7 +50,7 @@
     /* ── HEADER ── */
     .header {
       background: var(--dark-blue);
-      background-image: url('https://images.unsplash.com/photo-1758686253692-2d6921de12dd?auto=format&fit=crop&w=1400&q=80');
+      background-image: url('https://images.unsplash.com/photo-1633394782240-f81aba3f850d?auto=format&fit=crop&w=1400&q=80');
       background-size: cover;
       background-position: center 35%;
       color: var(--white);
@@ -59,7 +58,7 @@
       position: relative;
       flex-shrink: 0;
     }
-    /* Dark blue overlay over elder care photo */
+    /* Dark blue overlay over yoga studio photo */
     .header::after {
       content: '';
       position: absolute;
@@ -67,6 +66,7 @@
       background: rgba(32, 59, 114, 0.82);
       pointer-events: none;
     }
+    .header-top, .stats { position: relative; z-index: 1; }
     .header::before {
       content: '';
       position: absolute;
@@ -81,8 +81,6 @@
       align-items: flex-start;
       gap: 1rem;
       padding-top: 0.08in;
-      position: relative;
-      z-index: 1;
     }
     .brand {
       display: flex;
@@ -142,8 +140,6 @@
       background: var(--dark-blue);
       border-top: 1px solid rgba(255,255,255,0.12);
       flex-shrink: 0;
-      position: relative;
-      z-index: 1;
     }
     .stat {
       flex: 1;
@@ -158,7 +154,7 @@
     /* ── IMAGE STRIP ── */
     .image-strip {
       width: 100%;
-      height: 1.15in;
+      height: 150px;
       overflow: hidden;
       position: relative;
       flex-shrink: 0;
@@ -245,25 +241,6 @@
     }
     .diff-item h4 { font-size: 0.68rem; font-weight: 700; color: var(--dark-blue); margin-bottom: 1px; }
     .diff-item p  { font-size: 0.62rem; color: var(--muted); line-height: 1.45; }
-
-    /* ── IDEAL FOR ── */
-    .ideal-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.05in;
-      margin-bottom: 0.12in;
-    }
-    .ideal-item {
-      display: flex; align-items: center;
-      background: var(--blue-light);
-      border: 1px solid var(--line);
-      border-left: 3px solid var(--green);
-      border-radius: 0 5px 5px 0;
-      padding: 0.05in 0.08in;
-      font-size: 0.63rem;
-      font-weight: 600;
-      color: var(--dark-blue);
-    }
 
     /* ── BENEFITS ── */
     .benefit-list {
@@ -415,7 +392,6 @@
     <div class="header-top">
       <div>
         <div class="brand">
-          <!-- Logo: drop logo.png into the Claude_Project folder to display it -->
           <img
             src="logo.jpg"
             alt="MoldCure"
@@ -426,8 +402,8 @@
             Mold<span>Cure</span>
           </div>
         </div>
-        <h1>Dry‑Fog Sanitization for<br /><span>Elder Care Facilities</span></h1>
-        <p class="header-tagline">A Safer, Cleaner Environment for Residents, Families &amp; Staff</p>
+        <h1>Dry‑Fog Sanitization for<br /><span>Gyms &amp; Fitness Centers</span></h1>
+        <p class="header-tagline">A Cleaner, Fresher Gym Experience for Members &amp; Staff</p>
       </div>
       <div class="header-badge">VaPURE™ Technology</div>
     </div>
@@ -435,7 +411,7 @@
     <!-- STATS -->
     <div class="stats">
       <div class="stat"><div class="stat-num">99.9%</div><div class="stat-label">Pathogen Kill Rate</div></div>
-      <div class="stat"><div class="stat-num">&lt;1 hr</div><div class="stat-label">Per Zone</div></div>
+      <div class="stat"><div class="stat-num">6–8 hrs</div><div class="stat-label">Per Facility</div></div>
       <div class="stat"><div class="stat-num">Zero</div><div class="stat-label">Downtime</div></div>
       <div class="stat"><div class="stat-num">EPA</div><div class="stat-label">Approved</div></div>
       <div class="stat"><div class="stat-num">GLP</div><div class="stat-label">Lab Validated</div></div>
@@ -447,8 +423,8 @@
     <img src="fog1.jpg" alt="MoldCure dry fog sanitization in action" />
     <div class="image-strip-overlay">
       <div class="image-strip-text">
-        VaPURE™ Dry Fog fills every room, vent &amp; surface
-        <span>Whole-building protection — reaching where traditional cleaning can't</span>
+        VaPURE™ Dry Fog fills every weight room, locker &amp; surface
+        <span>Whole-facility protection — reaching where traditional cleaning can't</span>
       </div>
     </div>
   </div>
@@ -459,23 +435,30 @@
     <!-- LEFT COLUMN -->
     <div class="col col-left">
       <p class="intro">
-        Senior‑living environments require exceptional standards of cleanliness, odor control, and infection prevention. MoldCure's dry‑fog sanitization system treats air and surfaces simultaneously, reaching deep into rooms, vents, fabrics, and high‑touch areas to reduce airborne contaminants and measurably improve indoor air quality.
+        Gyms and fitness centers battle odors, sweat, high‑touch surfaces, and airborne contaminants every day. MoldCure's dry‑fog sanitization system delivers whole‑facility coverage that traditional cleaning can't reach — helping you create a cleaner, fresher environment that keeps members coming back. Our ultra‑fine dry fog treats air and surfaces simultaneously, reaching locker rooms, weight rooms, turf areas, studios, and HVAC systems to reduce odors and improve air quality.
       </p>
 
       <div class="sec-label">What Makes MoldCure Different</div>
       <ul class="diff-list">
         <li class="diff-item">
-          <div class="diff-icon">🏢</div>
+          <div class="diff-icon">💨</div>
           <div>
-            <h4>Whole‑Building Coverage</h4>
-            <p>Our dry fog fills each room like a vapor, reaching high ceilings, corners, vents, and soft surfaces that manual cleaning can't access.</p>
+            <h4>Odor Elimination</h4>
+            <p>Removes sweat, moisture, and locker‑room odors at the source — not just masking them.</p>
+          </div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-icon">🏋️</div>
+          <div>
+            <h4>Whole‑Facility Coverage</h4>
+            <p>Our dry fog reaches high ceilings, equipment frames, mats, turf, and ventilation systems that are difficult or impossible to sanitize manually.</p>
           </div>
         </li>
         <li class="diff-item">
           <div class="diff-icon">⚡</div>
           <div>
             <h4>Fast &amp; Non‑Disruptive</h4>
-            <p>Most treatments take under an hour per zone. No moving furniture. No residue. No downtime for residents or staff.</p>
+            <p>Most gyms can be treated after hours in under an hour. No residue. No moisture. No downtime.</p>
           </div>
         </li>
         <li class="diff-item">
@@ -488,15 +471,8 @@
         <li class="diff-item">
           <div class="diff-icon">💚</div>
           <div>
-            <h4>Safe for Residents &amp; Staff</h4>
-            <p>Once the fog dissipates and the space is aerated, rooms are immediately safe to re‑enter. No harsh odors or cleanup required.</p>
-          </div>
-        </li>
-        <li class="diff-item">
-          <div class="diff-icon">🌬️</div>
-          <div>
-            <h4>Odor Elimination</h4>
-            <p>Removes persistent odors from kitchens, laundry areas, resident rooms, and common spaces — improving first impressions for families and visitors.</p>
+            <h4>Safe for Members &amp; Staff</h4>
+            <p>Once the fog dissipates and the space is aerated, it's safe to re‑enter. No harsh chemical smells.</p>
           </div>
         </li>
       </ul>
@@ -505,24 +481,23 @@
     <!-- RIGHT COLUMN -->
     <div class="col col-right">
 
-<div class="sec-label">Benefits for Your Community</div>
+      <div class="sec-label">Benefits for Your Gym</div>
       <ul class="benefit-list">
-        <li><span class="check">✓</span>Reduces airborne pathogens and mold spores</li>
-        <li><span class="check">✓</span>Enhances resident comfort and satisfaction</li>
-        <li><span class="check">✓</span>Supports infection‑control protocols</li>
-        <li><span class="check">✓</span>Lightens housekeeping workload</li>
-        <li><span class="check">✓</span>Improves indoor air quality throughout the facility</li>
-        <li><span class="check">✓</span>Eliminates odors at the source</li>
-        <li><span class="check">✓</span>Provides peace of mind for families and staff</li>
+        <li><span class="check">✓</span>Eliminates odors quickly</li>
+        <li><span class="check">✓</span>Reduces airborne pathogens and spores</li>
+        <li><span class="check">✓</span>Enhances member experience and retention</li>
+        <li><span class="check">✓</span>Supports your cleaning staff</li>
+        <li><span class="check">✓</span>Improves indoor air quality</li>
+        <li><span class="check">✓</span>Helps differentiate your gym from competitors</li>
       </ul>
 
       <div class="sec-label">Flexible Service Plans</div>
       <div class="plans-box">
-        <p>We offer sanitization memberships tailored to your building size and needs. Our team will assess your facility and recommend the most effective schedule.</p>
+        <p>We offer sanitization memberships tailored to your facility's size and traffic levels. Our team will assess your gym and recommend the most effective schedule.</p>
         <div class="plan-tags">
           <span class="plan-tag">Monthly</span>
           <span class="plan-tag">Bi‑Weekly</span>
-          <span class="plan-tag">Quarterly</span>
+          <span class="plan-tag">Weekly</span>
           <span class="plan-tag">Custom</span>
         </div>
       </div>
@@ -532,9 +507,9 @@
         <div class="fog2-caption">Our certified technicians treat your facility with care</div>
       </div>
 
-      <div class="sec-label">Experience the MoldCure Difference</div>
+      <div class="sec-label">Schedule a Complimentary Walkthrough</div>
       <div class="cta-box">
-        <p>We offer <strong>complimentary on‑site walkthroughs</strong> for senior‑living communities. Let us show you how our dry‑fog system can elevate your environment and support your care mission.</p>
+        <p>We offer <strong>complimentary on‑site walkthroughs</strong> for gyms and fitness centers. Let us show you how our dry‑fog system can create a cleaner, fresher environment for your members and staff.</p>
       </div>
 
     </div>
@@ -544,7 +519,7 @@
   <div class="footer">
     <div class="footer-left">
       <h3>Schedule a Free Walkthrough Today</h3>
-      <p class="sub">Contact us — we'll assess your facility at no cost or obligation.</p>
+      <p class="sub">Contact us — we'll assess your gym at no cost or obligation.</p>
       <div class="footer-contacts">
         <a class="footer-contact" href="tel:2023707752">
           <span class="ico">📞</span>(202) 370‑7752

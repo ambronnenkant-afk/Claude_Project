@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoldCure — VIDA Enterprise Pricing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @page { size: Letter portrait; margin: 0; }
+
+    *, *::before, *::after {
+      box-sizing: border-box; margin: 0; padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    :root {
+      --dark-blue:  #203B72;
+      --green:      #00A651;
+      --green-light:#e6f7ee;
+      --blue-light: #eaeff8;
+      --blue-mid:   #2d4f8e;
+      --text:       #1a2e50;
+      --muted:      #52647a;
+      --line:       #d4dce8;
+      --white:      #ffffff;
+    }
+
+    body {
+      font-family: 'proxima-nova', 'Proxima Nova', 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      background: #8a95a3;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--dark-blue);
+      color: var(--white);
+      padding: 0.32in 0.55in 0.28in;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: var(--green);
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand-logo {
+      height: 72px;
+      width: auto;
+      max-width: 280px;
+      display: block;
+      background: var(--white);
+      border-radius: 8px;
+      padding: 7px 14px;
+    }
+    .brand-logo-fallback {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+    .brand-logo-fallback span { color: var(--green); }
+    .header-right { text-align: right; }
+    .header-right .label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #a8bcd6;
+      margin-bottom: 0.18rem;
+    }
+    .header-right h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    .header-right h1 span { color: var(--green); }
+    .header-sub {
+      margin-top: 0.22in;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .header-sub .divider {
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+    }
+    .header-sub p {
+      font-size: 0.72rem;
+      color: #cbd5e8;
+      white-space: nowrap;
+    }
+    .enterprise-badge {
+      background: var(--green);
+      color: var(--white);
+      border-radius: 4px;
+      padding: 0.2rem 0.75rem;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    /* ── MAIN BODY ── */
+    .body {
+      flex: 1;
+      padding: 0.35in 0.55in 0.25in;
+      display: flex;
+      flex-direction: column;
+      gap: 0.22in;
+      overflow: hidden;
+    }
+
+    /* ── PLAN CARDS ── */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.22in;
+    }
+
+    .plan-card {
+      border: 2px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .plan-card.featured {
+      border-color: var(--dark-blue);
+      box-shadow: 0 4px 20px rgba(32,59,114,0.15);
+    }
+
+    .plan-header {
+      background: var(--blue-light);
+      padding: 0.18in 0.2in 0.15in;
+      border-bottom: 2px solid var(--line);
+    }
+    .plan-card.featured .plan-header {
+      background: var(--dark-blue);
+      border-bottom-color: var(--dark-blue);
+    }
+    .plan-name {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--dark-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.04in;
+    }
+    .plan-card.featured .plan-name { color: var(--white); }
+    .plan-freq {
+      font-size: 0.6rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .plan-card.featured .plan-freq { color: #a8bcd6; }
+    .plan-badge {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 3px;
+      padding: 0.05rem 0.4rem;
+      font-size: 0.52rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 0.06in;
+    }
+
+    .plan-body {
+      padding: 0.18in 0.2in;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plan-price-row {
+      margin-bottom: 0.14in;
+      padding-bottom: 0.12in;
+      border-bottom: 1px solid var(--line);
+    }
+    .price-per-loc {
+      font-size: 0.6rem;
+      color: var(--muted);
+      margin-bottom: 0.04in;
+    }
+    .price-per-loc strong {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .price-per-loc .per { font-size: 0.58rem; font-weight: 500; }
+    .price-before {
+      font-size: 0.6rem;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-bottom: 0.03in;
+    }
+    .price-enterprise {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .price-enterprise .amount {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--dark-blue);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .price-enterprise .per-month {
+      font-size: 0.6rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .discount-tag {
+      display: inline-flex;
+      align-items: center;
+      background: var(--green-light);
+      border: 1px solid rgba(0,166,81,0.3);
+      color: var(--green);
+      border-radius: 3px;
+      padding: 0.04rem 0.35rem;
+      font-size: 0.54rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-top: 0.05in;
+    }
+
+    .plan-locations {
+      font-size: 0.62rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .plan-locations strong { color: var(--text); }
+
+    /* ── INCLUDED BOX ── */
+    .included-section {
+      background: var(--dark-blue);
+      border-radius: 10px;
+      padding: 0.2in 0.28in;
+      display: flex;
+      gap: 0.4in;
+      align-items: flex-start;
+    }
+    .included-label {
+      flex-shrink: 0;
+      font-size: 0.62rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--green);
+      padding-top: 0.02in;
+      white-space: nowrap;
+    }
+    .included-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.06in 0.5in;
+      flex: 1;
+    }
+    .included-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.65rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+    .inc-check {
+      flex-shrink: 0;
+      width: 14px; height: 14px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 0.5rem;
+      font-weight: 700;
+    }
+
+    /* ── SUMMARY TABLE ── */
+    .summary-section { }
+    .summary-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--green);
+      margin-bottom: 0.09in;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .summary-label::after {
+      content: ''; flex: 1;
+      height: 1px; background: var(--green); opacity: 0.25;
+    }
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.65rem;
+    }
+    .summary-table thead tr {
+      background: var(--dark-blue);
+      color: var(--white);
+    }
+    .summary-table thead th {
+      padding: 0.09in 0.14in;
+      text-align: left;
+      font-size: 0.58rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .summary-table thead th:not(:first-child) { text-align: right; }
+    .summary-table tbody tr { border-bottom: 1px solid var(--line); }
+    .summary-table tbody tr:nth-child(even) { background: var(--blue-light); }
+    .summary-table tbody td {
+      padding: 0.08in 0.14in;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .summary-table tbody td:not(:first-child) { text-align: right; }
+    .summary-table tbody td.strike {
+      color: var(--muted);
+      text-decoration: line-through;
+      font-size: 0.6rem;
+    }
+    .summary-table tbody td.highlight {
+      font-weight: 800;
+      color: var(--dark-blue);
+      font-size: 0.7rem;
+    }
+    .summary-table tbody td .savings {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green);
+      border-radius: 3px;
+      padding: 0.01rem 0.3rem;
+      font-size: 0.53rem;
+      font-weight: 700;
+      margin-left: 0.3rem;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--dark-blue);
+      color: #fff;
+      padding: 0.14in 0.55in;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 4px solid var(--green);
+      flex-shrink: 0;
+    }
+    .footer-left p { font-size: 0.62rem; color: #a8bcd6; line-height: 1.6; }
+    .footer-left p strong { color: var(--white); }
+    .footer-contacts { display: flex; gap: 0.2in; flex-wrap: wrap; margin-top: 0.04in; }
+    .footer-contact {
+      display: flex; align-items: center;
+      gap: 0.06in;
+      font-size: 0.65rem; font-weight: 600;
+      color: var(--white); text-decoration: none;
+    }
+    .footer-contact .ico {
+      width: 16px; height: 16px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.55rem; flex-shrink: 0;
+    }
+    .footer-note {
+      font-size: 0.55rem;
+      color: #a8bcd6;
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: none; padding: 0; display: block; }
+      .page { box-shadow: none; width: 8.5in; height: 11in; }
+      .print-btn { display: none !important; }
+    }
+
+    .print-btn {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--dark-blue);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      font-family: inherit;
+      border-left: 4px solid var(--green);
+    }
+    .print-btn:hover { background: var(--blue-mid); }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <img
+          src="logo.jpg"
+          alt="MoldCure"
+          class="brand-logo"
+          onerror="this.style.display='none'; document.getElementById('brand-fallback').style.display='block';"
+        />
+        <div class="brand-logo-fallback" id="brand-fallback" style="display:none;">
+          Mold<span>Cure</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="label">Enterprise Pricing Proposal</div>
+        <h1>Multi‑Location Sanitization<br /><span>Membership Options</span></h1>
+      </div>
+    </div>
+    <div class="header-sub">
+      <div class="divider"></div>
+      <p>Enterprise pricing for all <strong style="color:#fff;">6 VIDA locations</strong> &nbsp;·&nbsp; Based on 60,000 sq ft @ $0.10/sq ft &nbsp;·&nbsp; 15% multi-location discount applied</p>
+      <div class="enterprise-badge">Enterprise</div>
+      <div class="divider"></div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- PLAN CARDS -->
+    <div class="plans-grid">
+
+      <!-- MONTHLY -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <div class="plan-name">Monthly</div>
+          <div class="plan-freq">Once per month per location</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-price-row">
+            <div class="price-per-loc"><strong>$6,000</strong><span class="per"> / location / month</span></div>
+            <div class="price-before">$36,000 / month (6 locations)</div>
+            <div class="price-enterprise">
+              <span class="amount">$30,600</span>
+              <span class="per-month">/ month total</span>
+            </div>
+            <div class="discount-tag">&#10003; 15% Enterprise Discount — Save $5,400/mo</div>
+          </div>
+          <div class="plan-locations">
+            <strong>6 locations</strong> · Full-facility treatment each visit
+          </div>
+        </div>
+      </div>
+
+      <!-- BI-WEEKLY -->
+      <div class="plan-card featured">
+        <div class="plan-header">
+          <div class="plan-name">Bi‑Weekly</div>
+          <div class="plan-freq">Twice per month per location</div>
+          <div class="plan-badge">Most Popular</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-price-row">
+            <div class="price-per-loc"><strong>$12,000</strong><span class="per"> / location / month</span></div>
+            <div class="price-before">$72,000 / month (6 locations)</div>
+            <div class="price-enterprise">
+              <span class="amount">$61,200</span>
+              <span class="per-month">/ month total</span>
+            </div>
+            <div class="discount-tag">&#10003; 15% Enterprise Discount — Save $10,800/mo</div>
+          </div>
+          <div class="plan-locations">
+            <strong>6 locations</strong> · Full-facility treatment each visit
+          </div>
+        </div>
+      </div>
+
+      <!-- WEEKLY -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <div class="plan-name">Weekly <span style="font-size:0.58rem;font-weight:600;color:var(--green);margin-left:4px;">Premium</span></div>
+          <div class="plan-freq">Every week per location</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-price-row">
+            <div class="price-per-loc"><strong>$24,000</strong><span class="per"> / location / month</span></div>
+            <div class="price-before">$144,000 / month (6 locations)</div>
+            <div class="price-enterprise">
+              <span class="amount">$122,400</span>
+              <span class="per-month">/ month total</span>
+            </div>
+            <div class="discount-tag">&#10003; 15% Enterprise Discount — Save $21,600/mo</div>
+          </div>
+          <div class="plan-locations">
+            <strong>6 locations</strong> · Full-facility treatment each visit
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- INCLUDED IN ALL PLANS -->
+    <div class="included-section">
+      <div class="included-label">Included in<br />All Plans</div>
+      <div class="included-list">
+        <div class="included-item"><span class="inc-check">✓</span>Full‑facility dry‑fog sanitization</div>
+        <div class="included-item"><span class="inc-check">✓</span>After‑hours service</div>
+        <div class="included-item"><span class="inc-check">✓</span>Odor elimination</div>
+        <div class="included-item"><span class="inc-check">✓</span>Priority emergency response</div>
+      </div>
+    </div>
+
+    <!-- SUMMARY TABLE -->
+    <div class="summary-section">
+      <div class="summary-label">Pricing Summary — 6 VIDA Locations</div>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Per Location</th>
+            <th>Standard (×6)</th>
+            <th>Enterprise Rate</th>
+            <th>Annual Savings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Monthly</strong></td>
+            <td>$6,000 / mo</td>
+            <td class="strike">$36,000 / mo</td>
+            <td class="highlight">$30,600 / mo <span class="savings">−15%</span></td>
+            <td>$64,800 / yr</td>
+          </tr>
+          <tr>
+            <td><strong>Bi‑Weekly</strong></td>
+            <td>$12,000 / mo</td>
+            <td class="strike">$72,000 / mo</td>
+            <td class="highlight">$61,200 / mo <span class="savings">−15%</span></td>
+            <td>$129,600 / yr</td>
+          </tr>
+          <tr>
+            <td><strong>Weekly (Premium)</strong></td>
+            <td>$24,000 / mo</td>
+            <td class="strike">$144,000 / mo</td>
+            <td class="highlight">$122,400 / mo <span class="savings">−15%</span></td>
+            <td>$259,200 / yr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <p><strong>Ready to get started?</strong> Contact us to schedule walkthroughs for all 6 VIDA locations.</p>
+      <div class="footer-contacts">
+        <a class="footer-contact" href="tel:2023707752">
+          <span class="ico">📞</span>(202) 370‑7752
+        </a>
+        <a class="footer-contact" href="mailto:service@moldcure.com">
+          <span class="ico">✉️</span>service@moldcure.com
+        </a>
+        <a class="footer-contact" href="https://moldcure.com">
+          <span class="ico">🌐</span>moldcure.com
+        </a>
+      </div>
+    </div>
+    <div class="footer-note">
+      Pricing valid for 6-location enterprise agreement.<br />
+      All services performed after hours. No disruption to operations.
+    </div>
+  </div>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+
+</body>
+</html>

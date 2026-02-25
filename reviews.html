@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoldCure — Leave Us a Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @page { size: Letter portrait; margin: 0; }
+
+    *, *::before, *::after {
+      box-sizing: border-box; margin: 0; padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    :root {
+      --dark-blue:  #203B72;
+      --green:      #00A651;
+      --green-light:#e6f7ee;
+      --blue-light: #eaeff8;
+      --blue-mid:   #2d4f8e;
+      --text:       #1a2e50;
+      --muted:      #52647a;
+      --line:       #d4dce8;
+      --white:      #ffffff;
+      --google-red: #EA4335;
+      --nd-green:   #00B246;
+    }
+
+    body {
+      font-family: 'proxima-nova', 'Proxima Nova', 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      background: #8a95a3;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--dark-blue);
+      color: var(--white);
+      padding: 0.38in 0.6in 0.32in;
+      position: relative;
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: var(--green);
+    }
+    .brand-logo {
+      height: 72px;
+      width: auto;
+      max-width: 260px;
+      display: block;
+      background: var(--white);
+      border-radius: 8px;
+      padding: 7px 14px;
+      margin: 0 auto 0.22in;
+    }
+    .brand-logo-fallback {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 0.22in;
+    }
+    .brand-logo-fallback span { color: var(--green); }
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.12in;
+    }
+    .header h1 span { color: var(--green); }
+    .header p {
+      font-size: 0.95rem;
+      color: #a8bcd6;
+      max-width: 5in;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── BODY ── */
+    .body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.4in 0.6in;
+      gap: 0.35in;
+    }
+
+    /* ── QR CARDS ── */
+    .qr-cards {
+      display: flex;
+      gap: 0.5in;
+      justify-content: center;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .qr-card {
+      flex: 1;
+      max-width: 3in;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .qr-card-header {
+      width: 100%;
+      padding: 0.2in 0.25in 0.18in;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .qr-card.google .qr-card-header { background: var(--google-red); }
+    .qr-card.nextdoor .qr-card-header { background: var(--nd-green); }
+
+    .qr-card-header .platform-icon {
+      font-size: 1.5rem;
+    }
+    .qr-card-header h2 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+
+    .qr-card-body {
+      padding: 0.3in 0.25in;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.18in;
+      flex: 1;
+    }
+
+    .qr-frame {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border: 2px solid var(--line);
+    }
+    .qr-frame canvas, .qr-frame img { display: block; border-radius: 4px; }
+
+    .qr-instruction {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+    .qr-instruction strong { color: var(--text); display: block; font-size: 0.82rem; margin-bottom: 0.06rem; }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── DIVIDER ── */
+    .or-divider {
+      display: flex;
+      align-items: center;
+      gap: 0.18in;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      width: 100%;
+      max-width: 7in;
+    }
+    .or-divider::before, .or-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    /* ── THANK YOU NOTE ── */
+    .thankyou {
+      background: var(--green-light);
+      border: 1.5px solid rgba(0,166,81,0.25);
+      border-left: 5px solid var(--green);
+      border-radius: 0 10px 10px 0;
+      padding: 0.2in 0.28in;
+      max-width: 6.5in;
+      width: 100%;
+    }
+    .thankyou p {
+      font-size: 0.78rem;
+      color: var(--text);
+      line-height: 1.65;
+      text-align: center;
+    }
+    .thankyou p strong { color: var(--dark-blue); }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--dark-blue);
+      color: #fff;
+      padding: 0.16in 0.6in;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 4px solid var(--green);
+      flex-shrink: 0;
+    }
+    .footer-contacts { display: flex; gap: 0.22in; flex-wrap: wrap; }
+    .footer-contact {
+      display: flex; align-items: center;
+      gap: 0.06in;
+      font-size: 0.68rem; font-weight: 600;
+      color: var(--white); text-decoration: none;
+    }
+    .footer-contact .ico {
+      width: 17px; height: 17px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.58rem; flex-shrink: 0;
+    }
+    .footer-right {
+      font-size: 0.6rem;
+      color: #a8bcd6;
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: none; padding: 0; display: block; }
+      .page { box-shadow: none; width: 8.5in; height: 11in; }
+      .print-btn { display: none !important; }
+    }
+
+    .print-btn {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--dark-blue);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      font-family: inherit;
+      border-left: 4px solid var(--green);
+    }
+    .print-btn:hover { background: var(--blue-mid); }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img
+      src="logo.jpg"
+      alt="MoldCure"
+      class="brand-logo"
+      onerror="this.style.display='none'; document.getElementById('brand-fallback').style.display='block';"
+    />
+    <div class="brand-logo-fallback" id="brand-fallback" style="display:none;">
+      Mold<span>Cure</span>
+    </div>
+    <h1>Enjoying a <span>Cleaner Space?</span><br />We'd Love Your Review!</h1>
+    <p>Your feedback helps other homeowners and businesses find trusted mold remediation services. It only takes 30 seconds — scan a code below!</p>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <div class="qr-cards">
+
+      <!-- GOOGLE -->
+      <div class="qr-card google">
+        <div class="qr-card-header">
+          <span class="platform-icon">⭐</span>
+          <h2>Google Review</h2>
+        </div>
+        <div class="qr-card-body">
+          <div class="stars">★★★★★</div>
+          <div class="qr-frame">
+            <div id="qr-google"></div>
+          </div>
+          <div class="qr-instruction">
+            <strong>Scan to leave a Google review</strong>
+            Point your camera at the code — no app needed
+          </div>
+        </div>
+      </div>
+
+      <!-- NEXTDOOR -->
+      <div class="qr-card nextdoor">
+        <div class="qr-card-header">
+          <span class="platform-icon">🏘️</span>
+          <h2>Nextdoor Review</h2>
+        </div>
+        <div class="qr-card-body">
+          <div class="stars">★★★★★</div>
+          <div class="qr-frame">
+            <div id="qr-nextdoor"></div>
+          </div>
+          <div class="qr-instruction">
+            <strong>Scan to recommend on Nextdoor</strong>
+            Help your neighbors find a service they can trust
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="or-divider">or visit us directly</div>
+
+    <div class="thankyou">
+      <p>
+        <strong>Thank you for choosing MoldCure!</strong>
+        Reviews from happy customers like you help our small business grow and allow us to keep serving the Washington, DC community.
+        We truly appreciate you taking a moment to share your experience.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-contacts">
+      <a class="footer-contact" href="tel:2023707752">
+        <span class="ico">📞</span>(202) 370‑7752
+      </a>
+      <a class="footer-contact" href="mailto:service@moldcure.com">
+        <span class="ico">✉️</span>service@moldcure.com
+      </a>
+      <a class="footer-contact" href="https://moldcure.com">
+        <span class="ico">🌐</span>moldcure.com
+      </a>
+    </div>
+    <div class="footer-right">
+      MoldCure · Washington, DC<br />
+      VaPURE™ Dry Fog Technology
+    </div>
+  </div>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById('qr-google'), {
+    text: 'https://www.google.com/maps/place//data=!4m3!3m2!1s0x68465102278590e3:0xa6b5f5c5f941104c!12e1?source=g.page.m._&laa=merchant-review-solicitation',
+    width: 180,
+    height: 180,
+    colorDark: '#EA4335',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M,
+  });
+
+  new QRCode(document.getElementById('qr-nextdoor'), {
+    text: 'https://nextdoor.com/page/mold-cure-washington-dc?utm_campaign=1772032580627&share_action_id=c698ec58-5a11-4aad-aa4d-4934e2f38844',
+    width: 180,
+    height: 180,
+    colorDark: '#00B246',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M,
+  });
+</script>
+
+</body>
+</html>
