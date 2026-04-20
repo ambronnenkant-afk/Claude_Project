@@ -40,7 +40,7 @@ VA,United States,Fairfax city,Open,26340.0,0.30%,51,600,51600,,38.85309834,-77.2
 VA,United States,Fairfax County,Other Licensee,1160925.0,13.18%,51,59,51059,,38.83456592,-77.27621957,13.5
 VA,United States,Falls Church city,MoldCure,15034.0,0.17%,51,610,51610,,38.88472671,-77.17516383,7.8
 VA,United States,Fauquier County,MoldCure,75865.0,0.86%,51,61,51061,,38.73864644,-77.80923943,36.9
-VA,United States ,Floyd County,Other Licensee,,,51,131,51131,,,,
+VA,United States,Floyd County,Other Licensee,,,51,63,51063,,,,
 VA,United States,Fluvanna County,Open,28746.0,0.33%,51,65,51065,,37.84189455,-78.27718637,89.4
 VA,United States,Franklin city,Open,8373.0,0.10%,51,620,51620,,36.68309149,-76.93858455,131.6
 VA,United States,Franklin County,Open,55637.0,0.63%,51,67,51067,,36.99195551,-79.88106419,142.8
@@ -70,23 +70,23 @@ VA,United States,Lancaster County,Open,11062.0,0.13%,51,103,51103,,37.70171522,-
 VA,United States,Lee County,Open,21780.0,0.25%,51,105,51105,,36.70542643,-83.12861825,292.6
 VA,United States,Lexington city,Open,7802.0,0.09%,51,678,51678,,37.78253056,-79.44389376,130.6
 VA,United States,Loudoun County,MoldCure,443380.0,5.03%,51,107,51107,Brian  Jenkins,39.09067586,-77.63570535,32.5
-VA,United States,Louisa County,Other Licensee,,,51,154,51154,,,,
+VA,United States,Louisa County,Other Licensee,,,51,109,51109,,,,
 VA,United States,Lunenburg County,Open,12060.0,0.14%,51,111,51111,,36.94621014,-78.24056585,111.8
 VA,United States,Lynchburg city,Open,80301.0,0.91%,51,680,51680,,37.40028486,-79.1908563,118.2
 VA,United States,Madison County,MoldCure,14252.0,0.16%,51,113,51113,,38.41370416,-78.27922447,78.4
 VA,United States,Manassas city,MoldCure,43616.0,0.50%,51,683,51683,,38.74788113,-77.48380871,26.2
 VA,United States,Manassas Park city,MoldCure,16611.0,0.19%,51,685,51685,,38.77187748,-77.44503108,23.8
 VA,United States,Martinsville city,Open,13834.0,0.16%,51,690,51690,,36.68265855,-79.86363177,158.2
-VA,United States,Mathews County,Other Licensee,,,51,157,,,,,
+VA,United States,Mathews County,Other Licensee,,,51,115,51115,,,,
 VA,United States,Mecklenburg County,Open,30824.0,0.35%,51,117,51117,,36.680361,-78.3626942,125.4
 VA,United States,Middlesex County,Open,10949.0,0.12%,51,119,51119,,37.62270777,-76.50591334,96.3
-VA,United States,Montgomery County,Other Licensee,,,51,160,51121,,,,
+VA,United States,Montgomery County,Other Licensee,,,51,121,51121,,,,
 VA,United States,Nelson County,Open,14766.0,0.17%,51,125,51125,,37.78738071,-78.88682223,112.9
 VA,United States,New Kent County,Other Licensee,27218.0,0.31%,51,127,51127,,37.50521123,-76.99734005,92.5
 VA,United States,Newport News city,Other Licensee,183056.0,2.08%,51,700,51700,,37.07606695,-76.51643693,120.2
 VA,United States,Norfolk city,MoldCure,231105.0,2.62%,51,710,51710,,36.92334013,-76.2456337,135.2
 VA,United States,Northampton County,Other Licensee,11610.0,0.13%,51,131,51131,,37.353246,-75.941975,108.7
-VA,United States,Northumberland,Other Licensee,,,51,166,,,,,
+VA,United States,Northumberland,Other Licensee,,,51,133,51133,,,,
 VA,United States,Norton city,Open,3478.0,0.04%,51,720,51720,,36.93145743,-82.62620269,205.4
 VA,United States,Nottoway County,Open,15632.0,0.18%,51,135,51135,,37.14306264,-78.05126373,102.6
 VA,United States,Orange County,MoldCure,38986.0,0.44%,51,137,51137,,38.24621305,-78.01366653,68.9
@@ -98,7 +98,7 @@ VA,United States,Poquoson city,Other Licensee,12854.0,0.15%,51,735,51735,,37.150
 VA,United States,Portsmouth city,Open,96482.0,1.10%,51,740,51740,,36.85900078,-76.35670862,132.2
 VA,United States,Powhatan County,Open,32392.0,0.37%,51,145,51145,,37.55018715,-77.91519426,84.8
 VA,United States,Prince Edward County,Open,22276.0,0.25%,51,147,51147,,37.22430215,-78.44108281,102.4
-VA,United States,Prince George County,Other Licensee,,,51,174,51174,,,,
+VA,United States,Prince George County,Other Licensee,,,51,149,51149,,,,
 VA,United States,Prince William County,MoldCure,497003.0,5.64%,51,153,51153,James Quaid,38.70168554,-77.47761935,27.5
 VA,United States,Pulaski County,Open,33579.0,0.38%,51,155,51155,,37.06356105,-80.71438564,167.6
 VA,United States,Radford city,Open,17273.0,0.20%,51,750,51750,,37.12289116,-80.55874905,164.8
@@ -109,7 +109,7 @@ VA,United States,Roanoke city,Open,97912.0,1.11%,51,770,51770,,37.27848548,-79.9
 VA,United States,Roanoke County,Open,97334.0,1.11%,51,161,51161,,37.2692744,-80.06798936,153.2
 VA,United States,Rockbridge County,Open,22368.0,0.25%,51,163,51163,,37.81448905,-79.44728209,130.4
 VA,United States,Rockingham County,Open,87674.0,1.00%,51,165,51165,,38.51201049,-78.87575164,92.3
-VA,United States,Rusell County,Open,25420.0,0.29%,51,167,51167,,36.93387049,-82.09535684,191.1
+VA,United States,Russell County,Open,25420.0,0.29%,51,167,51167,,36.93387049,-82.09535684,191.1
 VA,United States,Salem city,Open,25908.0,0.29%,51,775,51775,,37.28639994,-80.05547544,152.2
 VA,United States,Scott County,Open,21388.0,0.24%,51,169,51169,,36.71428291,-82.60292227,201.4
 VA,United States,Shenandoah County,MoldCure,45441.0,0.52%,51,171,51171,,38.8583044,-78.57085166,75.4
