@@ -354,10 +354,6 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 0.6rem; flex-shrink: 0;
     }
-    .qr-wrap { text-align: center; flex-shrink: 0; }
-    .qr-inner { background: var(--white); border-radius: 7px; padding: 5px; display: inline-block; }
-    .qr-wrap p { font-size: 0.52rem; color: #a8bcd6; margin-top: 0.05in; text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600; }
-    #qrcode canvas, #qrcode img { display: block; border-radius: 3px; }
 
     /* ── PRINT ── */
     @media print {
@@ -522,27 +518,12 @@
         </a>
       </div>
     </div>
-    <div class="qr-wrap">
-      <div class="qr-inner"><div id="qrcode"></div></div>
-      <p>Scan to Visit</p>
-    </div>
   </div>
 
 </div>
 
 <button class="print-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-  new QRCode(document.getElementById('qrcode'), {
-    text: 'https://moldcure.com',
-    width: 82,
-    height: 82,
-    colorDark: '#203B72',
-    colorLight: '#ffffff',
-    correctLevel: QRCode.CorrectLevel.M,
-  });
-</script>
 
 </body>
 </html>
