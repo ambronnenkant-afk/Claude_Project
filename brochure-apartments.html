@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MoldCure Elder Care Brochure</title>
-  <!-- Montserrat as the closest Google Fonts match to Proxima Nova -->
+  <title>MoldCure Apartment Buildings Brochure</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
@@ -51,22 +50,22 @@
     /* ── HEADER ── */
     .header {
       background: var(--dark-blue);
-      background-image: url('https://images.unsplash.com/photo-1758686253692-2d6921de12dd?auto=format&fit=crop&w=1400&q=80');
+      background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80');
       background-size: cover;
-      background-position: center 35%;
+      background-position: center 40%;
       color: var(--white);
       padding: 0.22in 0.5in 0;
       position: relative;
       flex-shrink: 0;
     }
-    /* Dark blue overlay over elder care photo */
     .header::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(32, 59, 114, 0.82);
+      background: rgba(32, 59, 114, 0.84);
       pointer-events: none;
     }
+    .header-top, .stats { position: relative; z-index: 1; }
     .header::before {
       content: '';
       position: absolute;
@@ -81,8 +80,6 @@
       align-items: flex-start;
       gap: 1rem;
       padding-top: 0.08in;
-      position: relative;
-      z-index: 1;
     }
     .brand {
       display: flex;
@@ -142,8 +139,6 @@
       background: var(--dark-blue);
       border-top: 1px solid rgba(255,255,255,0.12);
       flex-shrink: 0;
-      position: relative;
-      z-index: 1;
     }
     .stat {
       flex: 1;
@@ -158,7 +153,7 @@
     /* ── IMAGE STRIP ── */
     .image-strip {
       width: 100%;
-      height: 1.15in;
+      height: 150px;
       overflow: hidden;
       position: relative;
       flex-shrink: 0;
@@ -245,25 +240,6 @@
     }
     .diff-item h4 { font-size: 0.68rem; font-weight: 700; color: var(--dark-blue); margin-bottom: 1px; }
     .diff-item p  { font-size: 0.62rem; color: var(--muted); line-height: 1.45; }
-
-    /* ── IDEAL FOR ── */
-    .ideal-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.05in;
-      margin-bottom: 0.12in;
-    }
-    .ideal-item {
-      display: flex; align-items: center;
-      background: var(--blue-light);
-      border: 1px solid var(--line);
-      border-left: 3px solid var(--green);
-      border-radius: 0 5px 5px 0;
-      padding: 0.05in 0.08in;
-      font-size: 0.63rem;
-      font-weight: 600;
-      color: var(--dark-blue);
-    }
 
     /* ── BENEFITS ── */
     .benefit-list {
@@ -415,7 +391,6 @@
     <div class="header-top">
       <div>
         <div class="brand">
-          <!-- Logo: drop logo.png into the Claude_Project folder to display it -->
           <img
             src="logo.jpg"
             alt="MoldCure"
@@ -426,8 +401,8 @@
             Mold<span>Cure</span>
           </div>
         </div>
-        <h1>Dry‑Fog Sanitization for<br /><span>Elder Care Facilities</span></h1>
-        <p class="header-tagline">A Safer, Cleaner Environment for Residents, Families &amp; Staff</p>
+        <h1>Dry‑Fog Sanitization for<br /><span>Apartment Buildings</span></h1>
+        <p class="header-tagline">Whole‑Building Mold &amp; Pathogen Control for Multifamily Properties</p>
       </div>
       <div class="header-badge">VaPURE™ Technology</div>
     </div>
@@ -435,7 +410,7 @@
     <!-- STATS -->
     <div class="stats">
       <div class="stat"><div class="stat-num">Zero</div><div class="stat-label">Viable Spores Remaining</div></div>
-      <div class="stat"><div class="stat-num">&lt;1 hr</div><div class="stat-label">Per Zone</div></div>
+      <div class="stat"><div class="stat-num">1 Day</div><div class="stat-label">Typical Treatment</div></div>
       <div class="stat"><div class="stat-num">Zero</div><div class="stat-label">Downtime</div></div>
       <div class="stat"><div class="stat-num">EPA</div><div class="stat-label">Approved</div></div>
       <div class="stat"><div class="stat-num">GLP</div><div class="stat-label">Lab Validated</div></div>
@@ -447,8 +422,8 @@
     <img src="fog1.jpg" alt="MoldCure dry fog sanitization in action" />
     <div class="image-strip-overlay">
       <div class="image-strip-text">
-        VaPURE™ Dry Fog fills every room, vent &amp; surface
-        <span>Whole-building protection — reaching where traditional cleaning can't</span>
+        VaPURE™ Dry Fog treats every unit, hallway &amp; HVAC system at once
+        <span>Whole‑building protection — reaching where traditional cleaning can't</span>
       </div>
     </div>
   </div>
@@ -459,7 +434,7 @@
     <!-- LEFT COLUMN -->
     <div class="col col-left">
       <p class="intro">
-        Senior‑living environments require exceptional standards of cleanliness, odor control, and infection prevention. MoldCure's dry‑fog sanitization system treats air and surfaces simultaneously, reaching deep into rooms, vents, fabrics, and high‑touch areas to reduce airborne contaminants and measurably improve indoor air quality.
+        Apartment buildings face mold and air quality challenges that unit‑by‑unit cleaning can't solve. Shared HVAC systems, stacked plumbing, and interconnected wall cavities mean a problem in one unit spreads to others before it's ever found. MoldCure's dry‑fog sanitization treats the entire building simultaneously — every unit, corridor, mechanical space, and duct — eliminating mold, spores, and pathogens at the source in a single visit.
       </p>
 
       <div class="sec-label">What Makes MoldCure Different</div>
@@ -467,36 +442,36 @@
         <li class="diff-item">
           <div class="diff-icon">🏢</div>
           <div>
-            <h4>Whole‑Building Coverage</h4>
-            <p>Our dry fog fills each room like a vapor, reaching high ceilings, corners, vents, and soft surfaces that manual cleaning can't access.</p>
-          </div>
-        </li>
-        <li class="diff-item">
-          <div class="diff-icon">⚡</div>
-          <div>
-            <h4>Fast &amp; Non‑Disruptive</h4>
-            <p>Most treatments take under an hour per zone. No moving furniture. No residue. No downtime for residents or staff.</p>
-          </div>
-        </li>
-        <li class="diff-item">
-          <div class="diff-icon">🔬</div>
-          <div>
-            <h4>Scientifically Validated Technology</h4>
-            <p>Hospital‑grade disinfecting solution backed by independent GLP laboratory testing — complete kill of bacteria, mold spores, and fungi on porous and non‑porous surfaces.</p>
-          </div>
-        </li>
-        <li class="diff-item">
-          <div class="diff-icon">💚</div>
-          <div>
-            <h4>Safe for Residents &amp; Staff</h4>
-            <p>Once the fog dissipates and the space is aerated, rooms are immediately safe to re‑enter. No harsh odors or cleanup required.</p>
+            <h4>Whole‑Building Coverage in One Visit</h4>
+            <p>Our VaPURE™ dry fog reaches shared HVAC ducts, wall cavities, crawl spaces, and common areas — not just individual unit surfaces.</p>
           </div>
         </li>
         <li class="diff-item">
           <div class="diff-icon">🌬️</div>
           <div>
-            <h4>Odor Elimination</h4>
-            <p>Removes persistent odors from kitchens, laundry areas, resident rooms, and common spaces — improving first impressions for families and visitors.</p>
+            <h4>Stops Cross‑Unit Mold Spread</h4>
+            <p>By treating the entire building at once, we eliminate the shared air pathways and hidden cavities that allow mold to migrate between units.</p>
+          </div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-icon">⚡</div>
+          <div>
+            <h4>Minimal Resident Disruption</h4>
+            <p>Treatment is performed after hours or over a weekend. Residents can return the same day — no extended relocation required.</p>
+          </div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-icon">🔬</div>
+          <div>
+            <h4>GLP Lab‑Validated Technology</h4>
+            <p>Independent testing confirms zero viable mold spores remaining on treated surfaces — documentation suitable for property management records and lease disclosures.</p>
+          </div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-icon">💚</div>
+          <div>
+            <h4>Safe for Residents &amp; Pets</h4>
+            <p>Once the fog dissipates and the building is aerated, it is safe to re‑enter — no harsh residues or chemical odors.</p>
           </div>
         </li>
       </ul>
@@ -505,36 +480,35 @@
     <!-- RIGHT COLUMN -->
     <div class="col col-right">
 
-<div class="sec-label">Benefits for Your Community</div>
+      <div class="sec-label">Benefits for Property Managers</div>
       <ul class="benefit-list">
-        <li><span class="check">✓</span>Reduces airborne pathogens and mold spores</li>
-        <li><span class="check">✓</span>Enhances resident comfort and satisfaction</li>
-        <li><span class="check">✓</span>Supports infection‑control protocols</li>
-        <li><span class="check">✓</span>Lightens housekeeping workload</li>
-        <li><span class="check">✓</span>Improves indoor air quality throughout the facility</li>
-        <li><span class="check">✓</span>Eliminates odors at the source</li>
-        <li><span class="check">✓</span>Provides peace of mind for families and staff</li>
+        <li><span class="check">✓</span>Eliminates mold complaints across all units</li>
+        <li><span class="check">✓</span>Removes musty odors from hallways and common areas</li>
+        <li><span class="check">✓</span>Reduces tenant health complaints and turnover</li>
+        <li><span class="check">✓</span>Improves building air quality scores</li>
+        <li><span class="check">✓</span>Provides lab‑validated documentation for records</li>
+        <li><span class="check">✓</span>Prevents costly remediation from recurring outbreaks</li>
       </ul>
 
       <div class="sec-label">Flexible Service Plans</div>
       <div class="plans-box">
-        <p>We offer sanitization memberships tailored to your building size and needs. Our team will assess your facility and recommend the most effective schedule.</p>
+        <p>We offer recurring sanitization programs tailored to your building's size, occupancy, and seasonal humidity patterns. Annual, semi‑annual, and quarterly schedules available for the DC metro area.</p>
         <div class="plan-tags">
-          <span class="plan-tag">Monthly</span>
-          <span class="plan-tag">Bi‑Weekly</span>
           <span class="plan-tag">Quarterly</span>
-          <span class="plan-tag">Custom</span>
+          <span class="plan-tag">Semi‑Annual</span>
+          <span class="plan-tag">Annual</span>
+          <span class="plan-tag">Turnover</span>
         </div>
       </div>
 
       <div class="fog2-wrap">
         <img src="fog2.jpg" alt="MoldCure technician applying dry fog treatment" />
-        <div class="fog2-caption">Our certified technicians treat your facility with care</div>
+        <div class="fog2-caption">Certified technicians treat your building with care</div>
       </div>
 
-      <div class="sec-label">Experience the MoldCure Difference</div>
+      <div class="sec-label">Schedule a Complimentary Walkthrough</div>
       <div class="cta-box">
-        <p>We offer <strong>complimentary on‑site walkthroughs</strong> for senior‑living communities. Let us show you how our dry‑fog system can elevate your environment and support your care mission.</p>
+        <p>We offer <strong>complimentary on‑site walkthroughs</strong> for apartment buildings and multifamily properties. Let us assess your building's mold and air quality risks — at no cost or obligation.</p>
       </div>
 
     </div>
@@ -543,8 +517,8 @@
   <!-- FOOTER -->
   <div class="footer">
     <div class="footer-left">
-      <h3>Schedule a Free Walkthrough Today</h3>
-      <p class="sub">Contact us — we'll assess your facility at no cost or obligation.</p>
+      <h3>Schedule a Free Building Walkthrough Today</h3>
+      <p class="sub">Contact us — we'll assess your property at no cost or obligation.</p>
       <div class="footer-contacts">
         <a class="footer-contact" href="tel:2023707752">
           <span class="ico">📞</span>(202) 370‑7752
