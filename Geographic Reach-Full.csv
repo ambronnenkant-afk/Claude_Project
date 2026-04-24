@@ -19,10 +19,11 @@ VA,United States,Arlington County,MoldCure,239807.0,2.72%,51,13,51013,,38.878583
 PA,United States,Armstrong,Open,63679.0,,42,5,42005,,40.81229077,-79.46453907,180.2
 ME,United States,Aroostook,Other Licensee,66030.0,,23,3,23003,,46.65881118,-68.59888751,700.2
 NC,United States,Ashe County,Open,26950.0,,37,9,37009,,36.432,-81.492,297.6
+NJ,United States,Atlantic County,Other Licensee,274549.0,,34,1,34001,,39.4637,-74.6251,130.2
 VA,United States,Augusta County,Open,78622.0,0.89%,51,15,51015,,38.16442649,-79.13385445,112.6
 NC,United States,Avery County,Open,17561.0,,37,11,37011,,36.068,-81.918,331.7
-MD,United States,Baltimore city,MoldCure,568271.0,9.07%,24,510,24510,,39.30097971,-76.61064691,35.2
 MD,United States,Baltimore County,MoldCure,852425.0,13.61%,24,5,24005,"Brenda Lee Wood,Shanice Turner,Brenda Michelson,Shana Franklin",39.44307285,-76.61632295,39.5
+MD,United States,Baltimore city,MoldCure,568271.0,9.07%,24,510,24510,,39.30097971,-76.61064691,35.2
 WV,United States,Barbour,Other Licensee,15221.0,,54,1,54001,,39.13293387,-80.00302888,155.2
 VA,United States,Bath County,Open,4071.0,0.05%,51,17,51017,,38.05868883,-79.74106192,128.6
 NC,United States,Beaufort County,Open,44499.0,,37,13,37013,,35.482,-76.842,236.9
@@ -30,6 +31,7 @@ PA,United States,Beaver,Open,165540.0,,42,7,42007,,40.68226295,-80.34928728,200.
 PA,United States,Bedford,Open,47643.0,,42,9,42009,,40.00655527,-78.49031712,110.2
 VA,United States,Bedford County,Open,82182.0,0.93%,51,19,51019,,37.31515241,-79.52417213,131.8
 NH,United States,Belknap,MoldCure,65733.0,,33,1,33001,,43.51796897,-71.42269361,430.2
+NJ,United States,Bergen County,Other Licensee,955732.0,,34,3,34003,,40.9584,-74.0745,225.4
 WV,United States,Berkeley,MoldCure,143159.0,,54,3,54003,Jeffery Jardine,39.46406649,-78.02754287,63.4
 PA,United States,Berks,Open,439117.0,,42,11,42011,,40.41629566,-75.9259989,126.6
 NC,United States,Bertie County,Open,16922.0,,37,15,37015,,36.072,-76.972,195.9
@@ -50,6 +52,7 @@ PA,United States,Bucks,Open,650131.0,,42,17,42017,Joan Rudolf,40.33694829,-75.10
 VA,United States,Buena Vista city,Open,6581.0,0.08%,51,530,51530,,37.73192758,-79.35682952,128.8
 NC,United States,Buncombe County,Other Licensee,274360.0,,37,21,37021,,35.593,-82.475,376.6
 NC,United States,Burke County,Open,87795.0,,37,23,37023,,35.75,-81.704,336.6
+NJ,United States,Burlington County,Other Licensee,461860.0,,34,5,34005,,39.8784,-74.6672,110.8
 PA,United States,Butler,Open,199341.0,,42,19,42019,,40.91171994,-79.91299255,192.2
 NC,United States,Cabarrus County,Other Licensee,236133.0,,37,25,37025,,35.387,-80.553,310.8
 WV,United States,Cabell,Other Licensee,90395.0,,54,11,54011,,38.42029688,-82.24171668,265.6
@@ -58,8 +61,10 @@ WV,United States,Calhoun,Other Licensee,5729.0,,54,13,54013,,38.84449818,-81.117
 MD,United States,Calvert County,Other Licensee,94913.0,1.52%,24,9,24009,,38.534712,-76.53056447,35.6
 PA,United States,Cambria,Open,130108.0,,42,21,42021,,40.49529401,-78.71370329,140.2
 NC,United States,Camden County,Open,11137.0,,37,29,37029,,36.335,-76.171,183.9
+NJ,United States,Camden County,Other Licensee,523485.0,,34,7,34007,,39.8009,-74.9585,100.6
 PA,United States,Cameron,Open,4348.0,,42,23,42023,,41.43680441,-78.2037774,175.2
 VA,United States,Campbell County,Open,55342.0,0.63%,51,31,51031,,37.2053604,-79.0965107,118.3
+NJ,United States,Cape May County,Other Licensee,95263.0,,34,9,34009,,39.0847,-74.8993,150.2
 PA,United States,Carbon,Open,65743.0,,42,25,42025,,40.91818292,-75.70882161,140.2
 MD,United States,Caroline County,Other Licensee,34248.0,0.55%,24,11,24011,,38.87172181,-75.83160096,60.2
 VA,United States,Caroline County,Open,33477.0,0.38%,51,33,51033,,38.0267183,-77.34704674,63.7
@@ -102,6 +107,7 @@ ME,United States,Cumberland,MoldCure,318911.0,,23,5,23005,,43.80608211,-70.33020
 PA,United States,Cumberland,Open,275516.0,,42,41,42041,,40.16362825,-77.26554269,87.2
 NC,United States,Cumberland County,Open,338545.0,,37,51,37051,,35.043,-78.826,284.7
 VA,United States,Cumberland County,Open,10062.0,0.11%,51,49,51049,,37.51211968,-78.24494509,92.1
+NJ,United States,Cumberland County,Other Licensee,154152.0,,34,11,34011,,39.3263,-75.0997,115.4
 NC,United States,Currituck County,Open,30601.0,,37,53,37053,,36.439,-75.993,179.8
 VA,United States,Danville city,Open,41993.0,0.48%,51,590,51590,,36.58319126,-79.40880677,150.8
 NC,United States,Dare County,Open,37875.0,,37,55,37055,,35.684,-75.711,234.3
@@ -121,8 +127,9 @@ PA,United States,Elk,Open,30124.0,,42,47,42047,,41.42522728,-78.64908626,180.2
 VA,United States,Emporia city,Open,5402.0,0.06%,51,595,51595,,36.69532995,-77.53561073,98.4
 PA,United States,Erie,Open,267750.0,,42,49,42049,,42.11747624,-80.09810636,255.6
 VA,United States,Essex County,Open,10683.0,0.12%,51,57,51057,,37.93906329,-76.94088354,68.8
-VA,United States,Fairfax city,Open,26340.0,0.30%,51,600,51600,,38.85309834,-77.29978807,15.8
+NJ,United States,Essex County,Other Licensee,863728.0,,34,13,34013,,40.7776,-74.2477,212.6
 VA,United States,Fairfax County,Other Licensee,1160925.0,13.18%,51,59,51059,,38.83456592,-77.27621957,13.5
+VA,United States,Fairfax city,Open,26340.0,0.30%,51,600,51600,,38.85309834,-77.29978807,15.8
 VA,United States,Falls Church city,MoldCure,15034.0,0.17%,51,610,51610,,38.88472671,-77.17516383,7.8
 VA,United States,Fauquier County,MoldCure,75865.0,0.86%,51,61,51061,,38.73864644,-77.80923943,36.9
 PA,United States,Fayette,Open,123941.0,,42,51,42051,,39.91989958,-79.64736935,160.6
@@ -133,9 +140,9 @@ PA,United States,Forest,Open,6601.0,,42,53,42053,,41.51307244,-79.23601184,195.2
 NC,United States,Forsyth County,Open,389977.0,,37,67,37067,,36.131,-80.254,260.5
 ME,United States,Franklin,Other Licensee,31054.0,,23,7,23007,,44.97416018,-70.44407664,560.2
 PA,United States,Franklin,Open,159285.0,,42,55,42055,,39.92742046,-77.72126796,78.4
-VA,United States,Franklin city,Open,8373.0,0.10%,51,620,51620,,36.68309149,-76.93858455,131.6
 NC,United States,Franklin County,Other Licensee,74386.0,,37,69,37069,,36.074,-78.301,207.7
 VA,United States,Franklin County,Open,55637.0,0.63%,51,67,51067,,36.99195551,-79.88106419,142.8
+VA,United States,Franklin city,Open,8373.0,0.10%,51,620,51620,,36.68309149,-76.93858455,131.6
 MD,United States,Frederick County,MoldCure,299317.0,4.78%,24,21,24021,,39.47221253,-77.39798433,39.6
 VA,United States,Frederick County,MoldCure,98109.0,1.11%,51,69,51069,,39.20458328,-78.26254708,63.4
 VA,United States,Fredericksburg city,MoldCure,29992.0,0.34%,51,630,51630,,38.2991926,-77.48715046,47.4
@@ -147,6 +154,7 @@ NC,United States,Gates County,Open,10343.0,,37,73,37073,,36.437,-76.697,171.7
 VA,United States,Giles County,Other Licensee,16533.0,0.19%,51,71,51071,,37.31425659,-80.70293686,161.4
 WV,United States,Gilmer,Other Licensee,6906.0,,54,21,54021,,38.92406177,-80.85708363,185.6
 VA,United States,Gloucester County,Open,40154.0,0.46%,51,73,51073,,37.40120863,-76.52296674,102.6
+NJ,United States,Gloucester County,Other Licensee,302294.0,,34,15,34015,,39.7151,-75.1393,94.8
 VA,United States,Goochland County,Open,28223.0,0.32%,51,75,51075,,37.72165058,-77.91585592,82.4
 NH,United States,Grafton,MoldCure,93317.0,,33,9,33009,,43.94066632,-71.82071979,450.2
 NC,United States,Graham County,Other Licensee,8052.0,,37,75,37075,,35.363,-83.826,446.8
@@ -183,6 +191,8 @@ NC,United States,Hoke County,Other Licensee,53835.0,,37,93,37093,,35.001,-79.242
 HI,United States,Honolulu,MoldCure,1007089.0,,15,3,15003,,21.461365,-158.201974,4840.8
 VA,United States,Hopewell city,Open,22970.0,0.26%,51,670,51670,,37.2914852,-77.29849155,84.2
 MD,United States,Howard County,MoldCure,339668.0,5.42%,24,27,24027,,39.25071693,-76.93119434,23.5
+NJ,United States,Hudson County,Other Licensee,724854.0,,34,17,34017,,40.7282,-74.0776,222.4
+NJ,United States,Hunterdon County,Other Licensee,128947.0,,34,19,34019,,40.5672,-74.9128,153.2
 PA,United States,Huntingdon,Open,43359.0,,42,61,42061,,40.4169345,-77.98120754,100.2
 NC,United States,Hyde County,Open,4607.0,,37,95,37095,,35.43,-76.178,244.9
 PA,United States,Indiana,Open,82953.0,,42,63,42063,,40.65205164,-79.08754709,165.2
@@ -202,9 +212,9 @@ HI,United States,Kauai,MoldCure,73654.0,,15,7,15007,,22.01107987,-159.7054382,48
 ME,United States,Kennebec,Other Licensee,129511.0,,23,11,23011,,44.40916014,-69.7672644,530.2
 DE,United States,Kent,Open,197824.0,,10,1,10001,,39.09595454,-75.5046137,66.2
 MD,United States,Kent County,Other Licensee,19557.0,0.31%,24,29,24029,,39.23560389,-76.0958206,57.4
-VA,United States,King and Queen County,Open,6747.0,0.08%,51,97,51097,,37.71863373,-76.8952824,84.4
 VA,United States,King George County,Open,28816.0,0.33%,51,99,51099,,38.27372748,-77.15645271,33.8
 VA,United States,King William County,Open,19232.0,0.22%,51,101,51101,,37.706596,-77.08854551,78.9
+VA,United States,King and Queen County,Open,6747.0,0.08%,51,97,51097,,37.71863373,-76.8952824,84.4
 ME,United States,Knox,Other Licensee,40855.0,,23,13,23013,,44.02729874,-69.01554749,520.2
 PA,United States,Lackawanna,Open,216859.0,,42,69,42069,,41.43678632,-75.60919565,185.4
 PA,United States,Lancaster,Open,563293.0,,42,71,42071,,40.04243844,-76.24770427,89.4
@@ -230,8 +240,8 @@ VA,United States,Lynchburg city,Open,80301.0,0.91%,51,680,51680,,37.40028486,-79
 NC,United States,Macon County,Other Licensee,37941.0,,37,113,37113,,35.119,-83.419,438.5
 NC,United States,Madison County,Other Licensee,21867.0,,37,115,37115,,35.831,-82.712,377.1
 VA,United States,Madison County,MoldCure,14252.0,0.16%,51,113,51113,,38.41370416,-78.27922447,78.4
-VA,United States,Manassas city,MoldCure,43616.0,0.50%,51,683,51683,,38.74788113,-77.48380871,26.2
 VA,United States,Manassas Park city,MoldCure,16611.0,0.19%,51,685,51685,,38.77187748,-77.44503108,23.8
+VA,United States,Manassas city,MoldCure,43616.0,0.50%,51,683,51683,,38.74788113,-77.48380871,26.2
 WV,United States,Marion,Other Licensee,55337.0,,54,49,54049,,39.50999507,-80.24339834,170.2
 WV,United States,Marshall,Other Licensee,29028.0,,54,51,54051,,39.86061286,-80.66338654,205.4
 NC,United States,Martin County,Open,21644.0,,37,117,37117,,35.853,-77.09,211.0
@@ -246,12 +256,15 @@ NC,United States,Mecklenburg County,Shared,1154681.0,,37,119,37119,,35.263,-80.8
 VA,United States,Mecklenburg County,Open,30824.0,0.35%,51,117,51117,,36.680361,-78.3626942,125.4
 PA,United States,Mercer,Open,108140.0,,42,85,42085,,41.30218089,-80.25770249,210.2
 WV,United States,Mercer,Other Licensee,56556.0,,54,55,54055,,37.40551502,-81.11144446,225.1
+NJ,United States,Mercer County,Other Licensee,387340.0,,34,21,34021,,40.2815,-74.709,128.6
 NH,United States,Merrimack,Other Licensee,159489.0,,33,13,33013,,43.29749626,-71.68027646,412.2
 VA,United States,Middlesex County,Open,10949.0,0.12%,51,119,51119,,37.62270777,-76.50591334,96.3
+NJ,United States,Middlesex County,Other Licensee,825062.0,,34,23,34023,,40.4396,-74.408,168.4
 PA,United States,Mifflin,Open,45935.0,,42,87,42087,,40.61041302,-77.61704199,110.2
 WV,United States,Mineral,MoldCure,26722.0,,54,57,54057,,39.4147219,-78.94374626,78.4
 WV,United States,Mingo,Other Licensee,21086.0,,54,59,54059,,37.72640404,-82.13476122,255.8
 NC,United States,Mitchell County,Open,14999.0,,37,121,37121,,36.012,-82.157,344.7
+NJ,United States,Monmouth County,Other Licensee,643615.0,,34,25,34025,,40.2899,-74.1673,173.8
 WV,United States,Monongalia,Other Licensee,110593.0,,54,61,54061,,39.63028389,-80.04654416,173.2
 PA,United States,Monroe,Open,166523.0,,42,89,42089,,41.05806563,-75.33951546,165.1
 WV,United States,Monroe,Other Licensee,12634.0,,54,63,54063,,37.56037183,-80.55055402,190.2
@@ -262,6 +275,7 @@ VA,United States,Montgomery County,Other Licensee,99721.0,1.16%,51,121,51121,,37
 PA,United States,Montour,Open,18115.0,,42,93,42093,,41.02792128,-76.65856173,140.2
 NC,United States,Moore County,Other Licensee,104876.0,,37,125,37125,,35.326,-79.484,281.8
 WV,United States,Morgan,MoldCure,18180.0,,54,65,54065,,39.56043315,-78.25773171,67.8
+NJ,United States,Morris County,Other Licensee,509285.0,,34,27,34027,,40.8495,-74.541,210.4
 NC,United States,Nash County,Other Licensee,96216.0,,37,127,37127,,35.967,-77.984,209.7
 VA,United States,Nelson County,Open,14766.0,0.17%,51,125,51125,,37.78738071,-78.88682223,112.9
 DE,United States,New Castle,MoldCure,599629.0,,10,3,10003,,39.5783299,-75.63897813,74.8
@@ -277,6 +291,7 @@ PA,United States,Northumberland,Open,90027.0,,42,97,42097,,40.85199078,-76.70932
 VA,United States,Northumberland,Other Licensee,11839.0,0.14%,51,133,51133,,37.856974,-76.379687,80.8
 VA,United States,Norton city,Open,3478.0,0.04%,51,720,51720,,36.93145743,-82.62620269,205.4
 VA,United States,Nottoway County,Open,15632.0,0.18%,51,135,51135,,37.14306264,-78.05126373,102.6
+NJ,United States,Ocean County,Other Licensee,637229.0,,34,29,34029,,39.8607,-74.257,158.6
 WV,United States,Ohio,Other Licensee,40828.0,,54,69,54069,,40.09692171,-80.61905701,200.2
 NC,United States,Onslow County,Other Licensee,207906.0,,37,133,37133,,34.726,-77.434,289.7
 NC,United States,Orange County,Other Licensee,149678.0,,37,135,37135,,36.062,-79.109,227.0
@@ -285,6 +300,7 @@ ME,United States,Oxford,MoldCure,59887.0,,23,17,23017,,44.49977202,-70.75657247,
 VA,United States,Page County,MoldCure,23686.0,0.27%,51,139,51139,,38.61942318,-78.48439798,75.0
 NC,United States,Pamlico County,Open,12423.0,,37,137,37137,,35.137,-76.772,260.9
 NC,United States,Pasquotank County,Open,40834.0,,37,139,37139,,36.293,-76.251,185.7
+NJ,United States,Passaic County,Other Licensee,524118.0,,34,31,34031,,40.9898,-74.3007,228.2
 VA,United States,Patrick County,Open,17308.0,0.20%,51,141,51141,,36.67836374,-80.28427457,170.4
 NC,United States,Pender County,Other Licensee,65550.0,,37,141,37141,,34.517,-77.884,306.9
 WV,United States,Pendleton,MoldCure,5836.0,,54,71,54071,,38.68072838,-79.35089359,120.2
@@ -318,13 +334,13 @@ WV,United States,Raleigh,Other Licensee,72085.0,,54,81,54081,,37.77136111,-81.24
 WV,United States,Randolph,Other Licensee,26852.0,,54,83,54083,,38.77472312,-79.87579557,150.3
 NC,United States,Randolph County,Open,146348.0,,37,151,37151,,35.706,-79.806,268.4
 VA,United States,Rappahannock County,MoldCure,7479.0,0.09%,51,157,51157,,38.68477222,-78.1592302,63.9
-VA,United States,Richmond city,Open,233655.0,2.65%,51,760,51760,,37.52944162,-77.47558796,86.1
 NC,United States,Richmond County,Other Licensee,42344.0,,37,153,37153,,34.992,-79.757,309.4
 VA,United States,Richmond County,Open,9215.0,0.11%,51,159,51159,,37.93705905,-76.72968728,83.8
+VA,United States,Richmond city,Open,233655.0,2.65%,51,760,51760,,37.52944162,-77.47558796,86.1
 WV,United States,Ritchie,Other Licensee,8136.0,,54,85,54085,,39.17826737,-81.06294738,200.2
 WV,United States,Roane,Other Licensee,13264.0,,54,87,54087,,38.71402559,-81.34834952,210.2
-VA,United States,Roanoke city,Open,97912.0,1.11%,51,770,51770,,37.27848548,-79.95808468,150.6
 VA,United States,Roanoke County,Open,97334.0,1.11%,51,161,51161,,37.2692744,-80.06798936,153.2
+VA,United States,Roanoke city,Open,97912.0,1.11%,51,770,51770,,37.27848548,-79.95808468,150.6
 NC,United States,Robeson County,Open,116902.0,,37,155,37155,,34.638,-79.104,316.4
 VA,United States,Rockbridge County,Open,22368.0,0.25%,51,163,51163,,37.81448905,-79.44728209,130.4
 NH,United States,Rockingham,Other Licensee,325969.0,,33,15,33015,,42.98459793,-71.08905934,420.2
@@ -334,6 +350,7 @@ NC,United States,Rowan County,Open,149875.0,,37,159,37159,,35.64,-80.52,296.0
 VA,United States,Russell County,Open,25420.0,0.29%,51,167,51167,,36.93387049,-82.09535684,191.1
 NC,United States,Rutherford County,Open,64930.0,,37,161,37161,,35.41,-81.92,361.4
 ME,United States,Sagadahoc,MoldCure,37664.0,,23,23,23023,,43.91172689,-69.83930896,500.2
+NJ,United States,Salem County,Other Licensee,64837.0,,34,33,34033,,39.5706,-75.3644,107.4
 VA,United States,Salem city,Open,25908.0,0.29%,51,775,51775,,37.28639994,-80.05547544,152.2
 NC,United States,Sampson County,Open,59470.0,,37,163,37163,,34.991,-78.371,280.4
 PA,United States,Schuylkill,Open,144523.0,,42,107,42107,,40.70580057,-76.21595486,123.2
@@ -345,6 +362,7 @@ PA,United States,Snyder,Open,39627.0,,42,109,42109,,40.76984024,-77.07016867,125
 PA,United States,Somerset,Open,72134.0,,42,111,42111,,39.97243983,-79.02827226,150.4
 ME,United States,Somerset,Other Licensee,51672.0,,23,25,23025,,45.51386747,-69.95882116,580.2
 MD,United States,Somerset County,Other Licensee,25241.0,0.40%,24,39,24039,,38.08006615,-75.85346883,92.9
+NJ,United States,Somerset County,Other Licensee,345361.0,,34,35,34035,,40.562,-74.6124,172.6
 VA,United States,Southampton County,Open,17941.0,0.20%,51,175,51175,,36.72040004,-77.10610076,108.2
 VA,United States,Spotsylvania County,Open,152021.0,1.73%,51,177,51177,,38.18495434,-77.65604732,47.7
 MD,United States,St. Mary's County,Other Licensee,116469.0,1.86%,24,37,24037,,38.21586101,-76.52905922,47.4
@@ -362,6 +380,7 @@ VA,United States,Surry County,Open,6579.0,0.08%,51,181,51181,,37.11691216,-76.88
 PA,United States,Susquehanna,Open,38100.0,,42,115,42115,,41.82132575,-75.8006829,180.2
 DE,United States,Sussex,Open,285452.0,,10,5,10005,,38.68329735,-75.33954171,88.2
 VA,United States,Sussex County,Open,10753.0,0.12%,51,183,51183,,36.9217519,-77.26179462,102.4
+NJ,United States,Sussex County,Other Licensee,144221.0,,34,37,34037,,41.1297,-74.6965,238.4
 NC,United States,Swain County,Other Licensee,14117.0,,37,173,37173,,35.458,-83.469,426.6
 MD,United States,Talbot County,Other Licensee,38244.0,0.61%,24,41,24041,,38.74910018,-76.17861706,52.2
 WV,United States,Taylor,Other Licensee,16544.0,,54,91,54091,,39.3359933,-80.0461837,165.6
@@ -373,6 +392,7 @@ WV,United States,Tyler,Other Licensee,7741.0,,54,95,54095,,39.46527764,-80.88482
 NC,United States,Tyrrell County,Open,3537.0,,37,177,37177,,35.856,-76.161,216.2
 PA,United States,Union,Open,42159.0,,42,119,42119,,40.96297154,-77.06226923,135.2
 NC,United States,Union County,Other Licensee,250958.0,,37,179,37179,,34.99,-80.53,332.3
+NJ,United States,Union County,Other Licensee,575345.0,,34,39,34039,,40.6589,-74.2926,208.2
 WV,United States,Upshur,Other Licensee,23818.0,,54,97,54097,,38.89782642,-80.23342321,160.2
 NC,United States,Vance County,Other Licensee,42322.0,,37,181,37181,,36.361,-78.399,191.1
 PA,United States,Venango,Open,49476.0,,42,121,42121,,41.40096896,-79.75794565,195.2
@@ -382,6 +402,7 @@ ME,United States,Waldo,Other Licensee,40871.0,,23,27,23027,,44.48524694,-69.1218
 PA,United States,Warren,Open,37373.0,,42,123,42123,,41.81457462,-79.27414337,205.2
 NC,United States,Warren County,Other Licensee,18642.0,,37,185,37185,,36.403,-78.099,182.5
 VA,United States,Warren County,MoldCure,42461.0,0.48%,51,187,51187,,38.90864795,-78.20845936,62.8
+NJ,United States,Warren County,Other Licensee,109632.0,,34,41,34041,,40.8562,-75.0127,182.8
 ME,United States,Washington,Other Licensee,31257.0,,23,29,23029,,44.96945885,-67.60905846,640.2
 PA,United States,Washington,Open,210434.0,,42,125,42125,,40.18940076,-80.24824436,185.3
 MD,United States,Washington County,MoldCure,157228.0,2.51%,24,43,24043,,39.60367468,-77.81398066,63.9
